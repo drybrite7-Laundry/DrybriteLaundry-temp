@@ -7,26 +7,33 @@
 
 @layer base {
   :root {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 4%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 4%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 142 84% 58%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 9%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 9%;
-    --muted-foreground: 0 0% 64%;
-    --accent: 0 0% 9%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 12%;
-    --input: 0 0% 12%;
-    --ring: 142 84% 58%;
+    /* Drybrite Laundry Color Scheme */
+    --background: 45 33% 95%; /* Soft Beige (#F5F5DC) */
+    --foreground: 210 100% 18%; /* Navy (#002B5B) */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 210 100% 18%; /* Navy */
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 210 100% 18%; /* Navy */
+    --primary: 172 69% 35%; /* Teal Green (#169481) */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary: 173 95% 22%; /* Dark Turquoise (#015D4F) */
+    --secondary-foreground: 0 0% 100%; /* White */
+    --muted: 60 14% 65%; /* Gray (#A6A6A6) */
+    --muted-foreground: 210 100% 18%; /* Navy */
+    --accent: 48 100% 67%; /* Yellow (#FFDE59) */
+    --accent-foreground: 210 100% 18%; /* Navy */
+    --destructive: 4 88% 69%; /* Coral (#FF6B6B) */
+    --destructive-foreground: 0 0% 100%; /* White */
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+    --ring: 172 69% 35%; /* Teal Green */
     --radius: 0.75rem;
+    
+    /* Additional Drybrite colors */
+    --coral: 4 88% 69%; /* Coral (#FF6B6B) */
+    --purple: 269 42% 43%; /* Purple (#6A4C93) */
+    --mint: 122 56% 84%; /* Mint (#B9FBC0) */
+    --blue-green: 199 78% 33%; /* Blue-Green (#167594) */
   }
 }
 
@@ -41,8 +48,7 @@
 }
 
 .glass {
-  @apply bg-white/5 backdrop-blur-lg;
-  border: 1px solid transparent;
+  @apply bg-white/80 backdrop-blur-lg border border-primary/10;
   background-clip: padding-box;
   position: relative;
 }
@@ -53,7 +59,7 @@
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(225deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+  background: linear-gradient(225deg, hsl(var(--primary) / 0.1), hsl(var(--secondary) / 0.05));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
@@ -62,13 +68,17 @@
 }
 
 .glass-hover {
-  @apply transition-all duration-300 hover:bg-white/10;
+  @apply transition-all duration-300 hover:bg-white/90;
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-[#22c55e];
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
 }
 
 .button-gradient {
-  @apply bg-gradient-to-r from-primary to-[#22c55e] hover:opacity-90 transition-opacity rounded-full;
+  @apply bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity rounded-full text-white;
+}
+
+.laundry-hero-bg {
+  background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--mint)) 100%);
 }

@@ -38,7 +38,7 @@ const PricingTier = ({
         ))}
       </ul>
       <Button className="button-gradient w-full">
-        Start Trading
+        Choose Plan
       </Button>
     </div>
   </CardSpotlight>
@@ -52,57 +52,60 @@ export const PricingSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-5xl md:text-6xl font-normal mb-6"
+          className="text-5xl md:text-6xl font-normal mb-6 text-foreground"
         >
           Choose Your{" "}
-          <span className="text-gradient font-medium">Trading Plan</span>
+          <span className="text-gradient font-medium">Service Plan</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.5 }}
-          className="text-lg text-gray-400"
+          className="text-lg text-foreground/70"
         >
-          Select the perfect trading plan with advanced features and competitive fees
+          Select the perfect laundry plan for your needs with transparent pricing
         </motion.p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <PricingTier
-          name="Basic Trader"
-          price="$0"
-          description="Perfect for beginners starting their crypto journey"
+          name="Standard Service"
+          price="₹50"
+          description="Perfect for regular laundry needs with quality care"
           features={[
-            "Basic spot trading",
-            "Market & limit orders",
-            "Basic market analysis",
-            "Email support"
+            "24-hour turnaround",
+            "Washing & basic dry cleaning",
+            "Standard ironing & folding",
+            "Doorstep pickup & delivery",
+            "WhatsApp booking support"
           ]}
         />
         <PricingTier
-          name="Pro Trader"
-          price="$29"
-          description="Advanced features for serious traders"
+          name="FastTrack Service"
+          price="₹80"
+          description="Express service for urgent laundry requirements"
           features={[
-            "Advanced trading tools",
-            "Margin trading up to 10x",
-            "Advanced technical analysis",
-            "Priority support",
-            "API access"
+            "12-hour express turnaround",
+            "Premium washing & dry cleaning",
+            "Professional pressing",
+            "Priority pickup & delivery",
+            "Stain treatment included",
+            "Quality guarantee"
           ]}
           isPopular
         />
         <PricingTier
-          name="Institutional"
-          price="Custom"
-          description="Enterprise-grade solutions for institutions"
+          name="Premium Care"
+          price="₹150"
+          description="Luxury care for designer wear and special fabrics"
           features={[
-            "Custom trading solutions",
-            "Unlimited trading volume",
-            "OTC desk access",
+            "Same-day service available",
+            "Luxury fabric specialist care",
+            "Hand-washing for delicates",
+            "Wedding wear cleaning",
+            "Protective packaging",
             "Dedicated account manager",
-            "Custom API integration",
-            "24/7 priority support"
+            "Perfumed wash option"
           ]}
         />
       </div>

@@ -6,46 +6,46 @@ import { Card } from "./ui/card";
 
 const testimonials = [
   {
-    name: "Michael Chen",
-    role: "Professional Trader",
+    name: "Ankit Sharma",
+    role: "IIIT Jhalwa Student",
     image: "https://avatars.githubusercontent.com/u/1234567?v=4",
-    content: "The real-time market data and advanced trading features have significantly improved my trading performance. The platform's security measures give me peace of mind."
+    content: "Drybrite has been a lifesaver during my studies! The 24-hour service and doorstep pickup means I never have to worry about laundry. Quality is excellent and prices are student-friendly."
   },
   {
-    name: "Sarah Johnson",
-    role: "Crypto Fund Manager",
+    name: "Priya Gupta",
+    role: "Faculty, IIIT Jhalwa",
     image: "https://avatars.githubusercontent.com/u/2345678?v=4",
-    content: "CryptoTrade's institutional-grade tools have transformed our trading strategy. The API integration and automated features have saved us countless hours."
+    content: "The WhatsApp booking system is so convenient, and they handle my silk sarees with such care. The FastTrack service saved me when I needed formal wear cleaned urgently."
   },
   {
-    name: "David Wilson",
-    role: "Early Crypto Investor",
+    name: "Ravi Kumar",
+    role: "Local Resident",
     image: "https://avatars.githubusercontent.com/u/3456789?v=4",
-    content: "The customer support is exceptional, and the platform's intuitive design made getting started with crypto trading seamless. A game-changer for both beginners and pros."
+    content: "Professional service with great attention to detail. They've been taking care of our family's laundry for months now. The staff is reliable and the quality is consistently excellent."
   },
   {
-    name: "Emily Zhang",
-    role: "DeFi Developer",
+    name: "Sneha Verma",
+    role: "Working Professional",
     image: "https://avatars.githubusercontent.com/u/4567890?v=4",
-    content: "We've seen remarkable improvements in our trading efficiency since switching to CryptoTrade. The smart order routing and liquidity aggregation are particularly impressive."
+    content: "The convenience of doorstep service has been amazing for my busy schedule. Their stain removal is impressive - they got out a wine stain I thought was permanent!"
   },
   {
-    name: "James Rodriguez",
-    role: "Crypto Security Expert",
+    name: "Amit Singh",
+    role: "Research Scholar",
     image: "https://avatars.githubusercontent.com/u/5678901?v=4",
-    content: "The security features are robust and the regular updates keep us ahead of emerging threats. It's exactly what the crypto industry needed."
+    content: "Affordable pricing and excellent service quality. They handle everything from daily wear to my formal suits with equal care. The location tracking feature is very helpful."
   },
   {
-    name: "Lisa Thompson",
-    role: "Portfolio Manager",
+    name: "Kavya Patel",
+    role: "IIIT Jhalwa Student",
     image: "https://avatars.githubusercontent.com/u/6789012?v=4",
-    content: "The platform's ability to handle complex trading strategies while maintaining simplicity in its interface is remarkable. It's been invaluable for our portfolio management."
+    content: "Their household item cleaning service is fantastic! They cleaned our hostel room curtains and they look brand new. The 12-hour express service is perfect for urgent needs."
   }
 ];
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-20 overflow-hidden bg-black">
+    <section className="py-20 overflow-hidden bg-background">
       <div className="container px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,9 +54,9 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-normal mb-4">Trusted by Traders</h2>
-          <p className="text-muted-foreground text-lg">
-            Join thousands of satisfied traders on CryptoTrade
+          <h2 className="text-5xl font-normal mb-4 text-foreground">Trusted by Our Community</h2>
+          <p className="text-foreground/70 text-lg">
+            Join hundreds of satisfied customers in IIIT Jhalwa and Prayagraj
           </p>
         </motion.div>
 
@@ -64,18 +64,18 @@ const TestimonialsSection = () => {
           <div className="relative flex overflow-hidden py-4">
             <div className="animate-marquee flex min-w-full shrink-0 items-stretch gap-8">
               {testimonials.map((testimonial, index) => (
-                <Card key={`${index}-1`} className="w-[400px] shrink-0 bg-black/40 backdrop-blur-xl border-white/5 hover:border-white/10 transition-all duration-300 p-8">
+                <Card key={`${index}-1`} className="w-[400px] shrink-0 glass border-primary/10 hover:border-primary/20 transition-all duration-300 p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <Avatar className="h-12 w-12">
                       <AvatarImage src={testimonial.image} />
-                      <AvatarFallback>{testimonial.name[0]}</AvatarFallback>
+                      <AvatarFallback className="bg-primary/10 text-primary">{testimonial.name[0]}</AvatarFallback>
                     </Avatar>
                     <div>
-                      <h4 className="font-medium text-white/90">{testimonial.name}</h4>
-                      <p className="text-sm text-white/60">{testimonial.role}</p>
+                      <h4 className="font-medium text-foreground">{testimonial.name}</h4>
+                      <p className="text-sm text-foreground/60">{testimonial.role}</p>
                     </div>
                   </div>
-                  <p className="text-white/70 leading-relaxed">
+                  <p className="text-foreground/70 leading-relaxed">
                     {testimonial.content}
                   </p>
                 </Card>
@@ -83,18 +83,18 @@ const TestimonialsSection = () => {
             </div>
             <div className="animate-marquee flex min-w-full shrink-0 items-stretch gap-8">
               {testimonials.map((testimonial, index) => (
-                <Card key={`${index}-2`} className="w-[400px] shrink-0 bg-black/40 backdrop-blur-xl border-white/5 hover:border-white/10 transition-all duration-300 p-8">
+                <Card key={`${index}-2`} className="w-[400px] shrink-0 glass border-primary/10 hover:border-primary/20 transition-all duration-300 p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <Avatar className="h-12 w-12">
                       <AvatarImage src={testimonial.image} />
-                      <AvatarFallback>{testimonial.name[0]}</AvatarFallback>
+                      <AvatarFallback className="bg-primary/10 text-primary">{testimonial.name[0]}</AvatarFallback>
                     </Avatar>
                     <div>
-                      <h4 className="font-medium text-white/90">{testimonial.name}</h4>
-                      <p className="text-sm text-white/60">{testimonial.role}</p>
+                      <h4 className="font-medium text-foreground">{testimonial.name}</h4>
+                      <p className="text-sm text-foreground/60">{testimonial.role}</p>
                     </div>
                   </div>
-                  <p className="text-white/70 leading-relaxed">
+                  <p className="text-foreground/70 leading-relaxed">
                     {testimonial.content}
                   </p>
                 </Card>
