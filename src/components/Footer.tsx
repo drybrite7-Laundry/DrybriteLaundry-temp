@@ -12,12 +12,17 @@ const Footer = () => {
               <p className="text-sm text-foreground/70">
                 Premium doorstep laundry and dry cleaning service in IIIT Jhalwa, Prayagraj.
               </p>
-              <div className="flex space-x-4">
-                <Button variant="ghost" size="icon" className="text-primary hover:bg-primary/10">
-                  <Phone className="w-4 h-4" />
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSdMPi0v34Bt5_rMaSi-ULBxglVdVpPAXLZzpb5n_dE4r4O-_g/viewform?usp=dialog", "_blank")}
+                  className="button-gradient"
+                >
+                  <Phone className="w-4 h-4 mr-2" />
+                  Book Now
                 </Button>
-                <Button variant="ghost" size="icon" className="text-primary hover:bg-primary/10">
-                  <MessageCircle className="w-4 h-4" />
+                <Button variant="outline" className="glass">
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  WhatsApp
                 </Button>
               </div>
             </div>
@@ -26,12 +31,12 @@ const Footer = () => {
               <h4 className="font-medium text-foreground">Services</h4>
               <ul className="space-y-2">
                 <li>
-                  <a href="#features" className="text-sm text-foreground/70 hover:text-primary transition-colors">
+                  <a href="/services" className="text-sm text-foreground/70 hover:text-primary transition-colors">
                     Washing & Dry Cleaning
                   </a>
                 </li>
                 <li>
-                  <a href="#pricing" className="text-sm text-foreground/70 hover:text-primary transition-colors">
+                  <a href="/pricing" className="text-sm text-foreground/70 hover:text-primary transition-colors">
                     Express Service
                   </a>
                 </li>

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Sparkles, Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,11 +41,15 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { name: "Services", href: "#features", onClick: () => scrollToSection('features') },
-    { name: "Pricing", href: "#pricing", onClick: () => scrollToSection('pricing') },
-    { name: "Reviews", href: "#testimonials", onClick: () => scrollToSection('testimonials') },
-    { name: "Contact", href: "#cta", onClick: () => scrollToSection('cta') },
+    { name: "Services", href: "/services" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "Reviews", href: "/reviews" },
+    { name: "Contact", href: "/contact" },
   ];
+
+  const handleBookNow = () => {
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLSdMPi0v34Bt5_rMaSi-ULBxglVdVpPAXLZzpb5n_dE4r4O-_g/viewform?usp=dialog", "_blank");
+  };
 
   return (
     <header
@@ -56,30 +61,24 @@ const Navigation = () => {
     >
       <div className="mx-auto h-full px-6">
         <nav className="flex items-center justify-between h-full">
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-primary" />
             <span className="font-bold text-base text-foreground">Drybrite Laundry</span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (item.onClick) {
-                    item.onClick();
-                  }
-                }}
+                to={item.href}
                 className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
             <Button 
-              onClick={() => scrollToSection('cta')}
+              onClick={handleBookNow}
               size="sm"
               className="button-gradient"
             >
@@ -98,25 +97,19 @@ const Navigation = () => {
               <SheetContent className="bg-card">
                 <div className="flex flex-col gap-4 mt-8">
                   {navItems.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
-                      href={item.href}
+                      to={item.href}
                       className="text-lg text-foreground/70 hover:text-primary transition-colors"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setIsMobileMenuOpen(false);
-                        if (item.onClick) {
-                          item.onClick();
-                        }
-                      }}
+                      onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                   <Button 
                     onClick={() => {
                       setIsMobileMenuOpen(false);
-                      scrollToSection('cta');
+                      handleBookNow();
                     }}
                     className="button-gradient mt-4"
                   >
