@@ -51,18 +51,18 @@ const Index = () => {
       }} className="inline-block mb-4 px-4 py-1.5 rounded-full glass">
           <span className="text-sm font-medium text-foreground">
             <Sparkles className="w-4 h-4 inline-block mr-2" />
-            DryBrite Laundry Services
+            Professional laundry & dry cleaning at your doorstep
           </span>
         </motion.div>
         
         <div className="max-w-4xl mx-auto relative z-10">
           <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-center">
             <span className="text-foreground/80">
-              <TextGenerateEffect words="Professional laundry &" />
+              <TextGenerateEffect words="DryBrite" />
             </span>
             <br />
             <span className="text-foreground font-medium">
-              <TextGenerateEffect words="dry cleaning at your doorstep" />
+              <TextGenerateEffect words="Laundry Services" />
             </span>
           </h1>
           
