@@ -51,7 +51,7 @@ const Index = () => {
       }} className="inline-block mb-4 px-4 py-1.5 rounded-full glass">
           <span className="text-sm font-medium text-foreground">
             <Sparkles className="w-4 h-4 inline-block mr-2" />
-            Premium laundry & dry cleaning service
+            DryBrite Laundry Services
           </span>
         </motion.div>
         
