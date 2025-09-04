@@ -23,8 +23,71 @@ const Contact = () => {
         </p>
       </section>
 
+      {/* Map and Contact Summary */}
+      <section className="container px-4 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          {/* Google Maps */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.1 }}
+            className="glass rounded-xl overflow-hidden"
+          >
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.3689943425743!2d81.7627576723741!3d25.4259243728356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398533006ff54159%3A0x920d38a8e9cccd93!2sDrybrite%20Laundry!5e0!3m2!1sen!2sin!4v1756995185330!5m2!1sen!2sin" 
+              width="100%" 
+              height="400" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-96 lg:h-[400px]"
+            />
+          </motion.div>
+
+          {/* Contact Summary */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            className="glass rounded-xl p-8"
+          >
+            <h2 className="text-2xl font-bold mb-6 text-foreground">Visit Our Location</h2>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="font-semibold text-foreground">Address</h3>
+                  <p className="text-foreground/70">IIIT Jhalwa, Prayagraj, Uttar Pradesh</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Clock className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="font-semibold text-foreground">Hours</h3>
+                  <p className="text-foreground/70">7 Days a Week, 8:00 AM - 8:00 PM</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="font-semibold text-foreground">Quick Contact</h3>
+                  <p className="text-foreground/70">+91 XXXXX XXXXX</p>
+                </div>
+              </div>
+            </div>
+            <Button 
+              onClick={handleBookNow}
+              className="w-full mt-6 button-gradient"
+            >
+              Schedule Pickup
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Contact Information */}
-      <section className="container px-4 py-20">
+      <section className="container px-4 pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
