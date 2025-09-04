@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { FeaturesSection } from "@/components/features/FeaturesSection";
-import ServicesCarousel from "@/components/ServicesCarousel";
+import ServicesList from "@/components/ServicesList";
 
 const Services = () => {
   return (
@@ -18,8 +18,8 @@ const Services = () => {
         </p>
       </section>
 
-      {/* Services Carousel */}
-      <ServicesCarousel />
+      {/* Services List */}
+      <ServicesList />
 
       {/* Features Section */}
       <div className="bg-background">
