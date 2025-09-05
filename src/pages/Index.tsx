@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
-import ServicesList from "@/components/ServicesList";
+import ServicesCarousel from "@/components/ServicesCarousel";
 import Footer from "@/components/Footer";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { Link } from "react-router-dom";
@@ -10,22 +10,20 @@ const Index = () => {
   const handleBookNow = () => {
     window.open("https://docs.google.com/forms/d/e/1FAIpQLSdMPi0v34Bt5_rMaSi-ULBxglVdVpPAXLZzpb5n_dE4r4O-_g/viewform?usp=dialog", "_blank");
   };
-
   return <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       
       {/* Header Logo */}
-      <motion.section 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="container px-4 pt-32 pb-8 text-center"
-      >
-        <img 
-          src="/drybrite-logo.png" 
-          alt="Drybrite Laundry Logo" 
-          className="mx-auto h-24 md:h-32 w-auto object-contain"
-        />
+      <motion.section initial={{
+      opacity: 0,
+      y: 20
+    }} animate={{
+      opacity: 1,
+      y: 0
+    }} transition={{
+      duration: 0.5
+    }} className="container px-4 pt-32 pb-8 text-center">
+        
       </motion.section>
       
       {/* Hero Section */}
@@ -114,18 +112,21 @@ const Index = () => {
         </motion.div>
       </motion.section>
 
-      {/* All Services */}
-      <ServicesList />
+      {/* Services Carousel */}
+      <ServicesCarousel />
 
       {/* Service Overview Cards */}
       <section className="container px-4 py-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="glass rounded-xl p-6 text-center hover:scale-105 transition-transform duration-300"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          delay: 0.1
+        }} className="glass rounded-xl p-6 text-center hover:scale-105 transition-transform duration-300">
             <h3 className="text-xl font-semibold mb-3 text-foreground">Quick Service</h3>
             <p className="text-foreground/70 mb-4">24-hour standard service with 12-hour FastTrack option for urgent needs.</p>
             <Button variant="outline" asChild>
@@ -133,12 +134,15 @@ const Index = () => {
             </Button>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="glass rounded-xl p-6 text-center hover:scale-105 transition-transform duration-300"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          delay: 0.2
+        }} className="glass rounded-xl p-6 text-center hover:scale-105 transition-transform duration-300">
             <h3 className="text-xl font-semibold mb-3 text-foreground">Professional Care</h3>
             <p className="text-foreground/70 mb-4">Expert handling for all fabric types including luxury and delicate garments.</p>
             <Button variant="outline" asChild>
@@ -146,12 +150,15 @@ const Index = () => {
             </Button>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="glass rounded-xl p-6 text-center hover:scale-105 transition-transform duration-300"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          delay: 0.3
+        }} className="glass rounded-xl p-6 text-center hover:scale-105 transition-transform duration-300">
             <h3 className="text-xl font-semibold mb-3 text-foreground">Doorstep Service</h3>
             <p className="text-foreground/70 mb-4">Convenient pickup and delivery right at your doorstep in IIIT Jhalwa.</p>
             <Button variant="outline" asChild>
