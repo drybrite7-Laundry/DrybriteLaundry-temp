@@ -32,9 +32,7 @@ const Footer = () => {
                   
                 </li>
                 <li>
-                  <a href="#" className="text-sm text-foreground/70 hover:text-primary transition-colors">
-                    Household Items
-                  </a>
+                  <a href="#" className="text-sm text-foreground/70 hover:text-primary transition-colors">Dry Cleaning</a>
                 </li>
               </ul>
             </div>
