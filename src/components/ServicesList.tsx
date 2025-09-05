@@ -61,10 +61,7 @@ const ServicesList = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.8 }}
       >
-        <Button 
-          size="lg" 
-          className="button-gradient px-8 py-6 text-lg font-medium"
-          <Button
+        <Button
   size="lg"
   className="button-gradient px-8 py-6 text-1g font-medium"
   onClick={() => {
@@ -72,13 +69,8 @@ const ServicesList = () => {
   }}
 >
   Book Any Service Now
+  <ArrowRight className="w-5 h-5 ml-2" />
 </Button>
-
-          
-        >
-          Book Any Service Now
-          <ArrowRight className="w-5 h-5 ml-2" />
-        </Button>
       </motion.div>
     </div>
   );
