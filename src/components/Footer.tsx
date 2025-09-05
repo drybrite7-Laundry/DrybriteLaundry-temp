@@ -49,7 +49,7 @@ const Footer = () => {
                   <span className="text-sm text-foreground/70">IIIT Jhalwa, Prayagraj</span>
                 </li>
                 <li>
-                  <a href="https://wa.me/+919876543210" className="text-sm text-foreground/70 hover:text-primary transition-colors">
+                  <a href="https://wa.me/+917487864406" className="text-sm text-foreground/70 hover:text-primary transition-colors">
                     WhatsApp Booking
                   </a>
                 </li>
