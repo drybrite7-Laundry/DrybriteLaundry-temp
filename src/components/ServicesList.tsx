@@ -65,7 +65,7 @@ const ServicesList = () => {
         size="lg"
         className="button-gradient px-8 py-6 text-1g font-medium"
         onClick={() => {
-            window.location.href = 'https://www.google.com';
+            window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdMPi0v34Bt5_rMaSi-ULBxglVdVpPAXLZzpb5n_dE4r4O-_g/viewform?usp=header';
   }}
 >
           Book Any Service Now
