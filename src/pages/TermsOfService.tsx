@@ -2,19 +2,21 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { FileText, Shirt, Clock, Phone, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
-
 const TermsOfService = () => {
-  return (
-    <div className="min-h-screen bg-background text-foreground">
+  return <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       
       {/* Header */}
       <section className="container px-4 pt-32 pb-12 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 20
+      }} animate={{
+        opacity: 1,
+        y: 0
+      }} transition={{
+        duration: 0.6
+      }}>
           <FileText className="w-16 h-16 mx-auto mb-6 text-primary" />
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
             Terms of Service
@@ -165,7 +167,7 @@ const TermsOfService = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <Phone className="w-5 h-5 text-primary" />
-                    <span>+91 98765 43210</span>
+                    <span>+91 74878 64406</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail className="w-5 h-5 text-primary" />
@@ -178,11 +180,11 @@ const TermsOfService = () => {
             {/* Last Updated */}
             <div className="pt-8 border-t border-primary/20">
               <p className="text-sm text-foreground/60">
-                Last updated: {new Date().toLocaleDateString('en-IN', { 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
-                })}
+                Last updated: {new Date().toLocaleDateString('en-IN', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
               </p>
             </div>
           </div>
@@ -190,8 +192,6 @@ const TermsOfService = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default TermsOfService;
