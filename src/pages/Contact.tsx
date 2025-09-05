@@ -109,7 +109,8 @@ const Contact = () => {
           delay: 0.2
         }} className="glass rounded-xl p-6 text-center">
             <Phone className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2 text-foreground">Phone</h3>
+            <h3 className="text-xl font-semibold mb-2 text-foreground">+91 74878 64406
+Call for immediate pickup</h3>
             <p className="text-foreground/70">
               +91 XXXXX XXXXX<br />
               Call for immediate pickup
