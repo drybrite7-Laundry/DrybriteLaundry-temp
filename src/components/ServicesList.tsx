@@ -64,12 +64,17 @@ const ServicesList = () => {
         <Button 
           size="lg" 
           className="button-gradient px-8 py-6 text-lg font-medium"
-          onClick={() => {
-            const bookingSection = document.getElementById('booking');
-            if (bookingSection) {
-              onClick={() => window.location.href = 'https://www.google.com';
-            }
-          }}
+          <Button
+  size="lg"
+  className="button-gradient px-8 py-6 text-1g font-medium"
+  onClick={() => {
+    window.location.href = 'https://www.google.com';
+  }}
+>
+  Book Any Service Now
+</Button>
+
+          
         >
           Book Any Service Now
           <ArrowRight className="w-5 h-5 ml-2" />
