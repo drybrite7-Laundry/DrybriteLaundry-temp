@@ -62,14 +62,14 @@ const ServicesList = () => {
         transition={{ duration: 0.5, delay: 0.8 }}
       >
         <Button
-  size="lg"
-  className="button-gradient px-8 py-6 text-1g font-medium"
-  onClick={() => {
-    window.location.href = 'https://www.google.com';
+        size="lg"
+        className="button-gradient px-8 py-6 text-1g font-medium"
+        onClick={() => {
+            window.location.href = 'https://www.google.com';
   }}
 >
-  Book Any Service Now
-  <ArrowRight className="w-5 h-5 ml-2" />
+          Book Any Service Now
+        <ArrowRight className="w-5 h-5 ml-2" />
 </Button>
       </motion.div>
     </div>
