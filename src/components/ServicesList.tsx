@@ -67,7 +67,7 @@ const ServicesList = () => {
           onClick={() => {
             const bookingSection = document.getElementById('booking');
             if (bookingSection) {
-              bookingSection.scrollIntoView({ behavior: 'smooth' });
+              onClick={() => window.location.href = 'https://www.google.com';
             }
           }}
         >
