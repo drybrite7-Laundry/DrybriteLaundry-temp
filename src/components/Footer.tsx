@@ -15,10 +15,17 @@ const Footer = () => {
                   <Phone className="w-4 h-4 mr-2" />
                   Book Now
                 </Button>
-                <Button variant="outline" className="glass">
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  WhatsApp
+
+                <Button
+                      variant="outline"
+                      className="glass"
+                      onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdmpV34Btr28906Y3q/viewform?usp=sf_link')}
+>
+                      <MessageCircle className="w-4 h-4 mr-2" />
+                         WhatsApp
                 </Button>
+
+                
               </div>
             </div>
 
