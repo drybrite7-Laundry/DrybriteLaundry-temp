@@ -1,9 +1,7 @@
 import { Phone, MessageCircle, MapPin } from "lucide-react";
 import { Button } from "./ui/button";
-
 const Footer = () => {
-  return (
-    <footer className="w-full py-12 mt-20">
+  return <footer className="w-full py-12 mt-20">
       <div className="container px-4">
         <div className="glass glass-hover rounded-xl p-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -13,10 +11,7 @@ const Footer = () => {
                 Premium doorstep laundry and dry cleaning service in IIIT Jhalwa, Prayagraj.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSdMPi0v34Bt5_rMaSi-ULBxglVdVpPAXLZzpb5n_dE4r4O-_g/viewform?usp=dialog", "_blank")}
-                  className="button-gradient"
-                >
+                <Button onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSdMPi0v34Bt5_rMaSi-ULBxglVdVpPAXLZzpb5n_dE4r4O-_g/viewform?usp=dialog", "_blank")} className="button-gradient">
                   <Phone className="w-4 h-4 mr-2" />
                   Book Now
                 </Button>
@@ -36,9 +31,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/pricing" className="text-sm text-foreground/70 hover:text-primary transition-colors">
-                    Express Service
-                  </a>
+                  
                 </li>
                 <li>
                   <a href="#" className="text-sm text-foreground/70 hover:text-primary transition-colors">
@@ -97,8 +90,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
