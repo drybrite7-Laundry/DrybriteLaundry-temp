@@ -11,7 +11,7 @@ const Footer = () => {
                 Premium doorstep laundry and dry cleaning service in IIIT Jhalwa, Prayagraj.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button onClick={() => window.open("https://api.whatsapp.com/send/?phone=%2B917487864406&text&type=phone_number&app_absent=0")} className="button-gradient">
+                <Button onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSdMPi0v34Bt5_rMaSi-ULBxglVdVpPAXLZzpb5n_dE4r4O-_g/viewform?usp=header")} className="button-gradient">
                   <Phone className="w-4 h-4 mr-2" />
                   Book Now
                 </Button>
@@ -19,7 +19,7 @@ const Footer = () => {
                 <Button
                       variant="outline"
                       className="glass"
-                      onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdmpV34Btr28906Y3q/viewform?usp=sf_link')}>
+                      onClick={() => window.open('https://api.whatsapp.com/send/?phone=%2B917487864406&text&type=phone_number&app_absent=0')}>
                       <MessageCircle className="w-4 h-4 mr-2" />
                          WhatsApp
                 </Button>
