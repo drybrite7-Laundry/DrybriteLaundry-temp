@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const ImageSlideshow = () => {
   const images = [
+    "/images/header1.png",
     "/images/header2.png",
     "/images/header3.png",
     "/images/header4.png",
@@ -11,7 +12,7 @@ const ImageSlideshow = () => {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Auto-change every 4 seconds
+  // Auto slide
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
@@ -30,7 +31,7 @@ const ImageSlideshow = () => {
   };
 
   return (
-    <div className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden rounded-2xl">
+    <div className="absolute inset-0 -z-10 overflow-hidden">
       {/* Slides */}
       <AnimatePresence mode="wait">
         <motion.img
@@ -38,15 +39,15 @@ const ImageSlideshow = () => {
           src={images[currentImageIndex]}
           alt={`Slide ${currentImageIndex + 1}`}
           className="absolute w-full h-full object-cover"
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
         />
       </AnimatePresence>
 
-      {/* Overlay for readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/60 to-background/80" />
+      {/* Overlay for text readability */}
+      <div className="absolute inset-0 bg-black/40" />
 
       {/* Navigation arrows */}
       <button
