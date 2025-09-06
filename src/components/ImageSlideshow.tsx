@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const ImageSlideshow = () => {
   const images = [
@@ -19,20 +19,19 @@ const ImageSlideshow = () => {
 
   return (
     <div className="absolute inset-0 w-full h-full overflow-hidden">
-      <AnimatePresence mode="wait">
+      {images.map((img, index) => (
         <motion.img
-          key={images[currentImageIndex]}
-          src={images[currentImageIndex]}
-          alt={`Slide ${currentImageIndex + 1}`}
+          key={index}
+          src={img}
+          alt={`Slide ${index + 1}`}
           className="absolute inset-0 w-full h-full object-cover"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
           transition={{ duration: 1 }}
         />
-      </AnimatePresence>
-      {/* Dark overlay for text visibility */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      ))}
+      {/* optional: remove overlay so no grey */}
+      {/* <div className="absolute inset-0 bg-black/30"></div> */}
     </div>
   );
 };
