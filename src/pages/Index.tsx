@@ -49,9 +49,11 @@ const Index = () => {
   transition={{ delay: 0.6 }}
   className="text-lg md:text-xl text-[#153257] mb-8 max-w-2xl mx-auto"
            >
-  Experience premium fabric care with 24-hour service, expert
-  handling, and convenient pickup & delivery in IIIT Jhalwa,
-  Prayagraj.{" "}
+  Welcome to Drybrite Laundry, your one-stop solution for all your garment and home cleaning needs. We are a professional laundry and dry-cleaning service dedicated to providing superior care for your clothes and a healthier environment for your home.
+
+Our team is committed to delivering exceptional quality with every service, from our gentle dry cleaning and premium laundry options to our specialized care for shoes, bags, and sofas. With our convenient pickup and delivery, we make it easier than ever to keep your belongings fresh and clean.
+
+At Drybrite Laundry, we believe in preserving the quality of your garments while offering an affordable and hassle-free experience. Let us handle the cleaning, so you can focus on what matters most.{" "}
   <span className="font-medium">Book your pickup in minutes.</span>
            </motion.p>
 
