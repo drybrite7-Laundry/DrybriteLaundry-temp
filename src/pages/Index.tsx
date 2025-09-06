@@ -33,7 +33,7 @@ const Index = () => {
         {/* Content overlay */}
         <div className="relative z-10 px-4">
           
-          <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-center text-white drop-shadow-lg">
+          <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-center text-blue-900">
             <span className="opacity-90">
               <TextGenerateEffect words="DryBrite" />
             </span>
