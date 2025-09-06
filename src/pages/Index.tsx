@@ -33,29 +33,28 @@ const Index = () => {
         {/* Content overlay */}
         <div className="relative z-10 px-4">
           
-          <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-center text-blue-900">
-            <span className="opacity-90">
-              <TextGenerateEffect words="DryBrite" />
+      <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-center text-[#153257]">
+             <span className="opacity-90">
+          <TextGenerateEffect words="DryBrite" />
             </span>
-            <br />
+          <br />
             <span className="font-medium">
-              <TextGenerateEffect words="Laundry Services" />
+       <TextGenerateEffect words="Laundry Services" />
             </span>
-          </h1>
+       </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto"
-          >
-            Experience premium fabric care with 24-hour service, expert
-            handling, and convenient pickup & delivery in IIIT Jhalwa,
-            Prayagraj.{" "}
-            <span className="font-medium">
-              Book your pickup in minutes.
-            </span>
-          </motion.p>
+            <motion.p
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.6 }}
+  className="text-lg md:text-xl text-[#153257] mb-8 max-w-2xl mx-auto"
+           >
+  Experience premium fabric care with 24-hour service, expert
+  handling, and convenient pickup & delivery in IIIT Jhalwa,
+  Prayagraj.{" "}
+  <span className="font-medium">Book your pickup in minutes.</span>
+           </motion.p>
+
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
