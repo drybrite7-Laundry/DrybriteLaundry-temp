@@ -1,5 +1,7 @@
 import { Phone, MessageCircle, MapPin } from "lucide-react";
 import { Button } from "./ui/button";
+import { services } from "@/config/services";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return <footer className="w-full py-12 mt-20">
       <div className="container px-4">
@@ -31,15 +33,16 @@ const Footer = () => {
             <div className="space-y-4">
               <h4 className="font-medium text-foreground">Services</h4>
               <ul className="space-y-2">
-                <li>
-                  <a href="/services" className="text-sm text-foreground/70 hover:text-primary transition-colors">Washing</a>
-                </li>
-                <li>
-                  
-                </li>
-                <li>
-                  <a href="#" className="text-sm text-foreground/70 hover:text-primary transition-colors">Dry Cleaning</a>
-                </li>
+                {services.map((service) => (
+                  <li key={service.id}>
+                    <Link 
+                      to={`/services/${service.id}`} 
+                      className="text-sm text-foreground/70 hover:text-primary transition-colors"
+                    >
+                      {service.title}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
