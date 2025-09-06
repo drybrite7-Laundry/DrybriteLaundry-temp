@@ -39,8 +39,11 @@ const Index = () => {
       delay: 0.2
     }} className="relative container px-4 pb-20 text-center">
         {/* Background with Image Slideshow */}
-        <ImageSlideshow />
-        <div className="absolute inset-0 -z-10 laundry-hero-bg" />
+        {/* Background with Image Slideshow */}
+           <div className="absolute inset-0 -z-10">
+               <ImageSlideshow />
+           </div>
+
         
         <motion.div initial={{
         opacity: 0
