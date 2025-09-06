@@ -3,11 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const ImageSlideshow = () => {
   const images = [
-    "/lovable-uploads/21f3edfb-62b5-4e35-9d03-7339d803b980.png",
-    "/lovable-uploads/79f2b901-8a4e-42a5-939f-fae0828e0aef.png",
-    "/lovable-uploads/7cc724d4-3e14-4e7c-9e7a-8d613fde54d0.png",
-    "/lovable-uploads/86329743-ee49-4f2e-96f7-50508436273d.png",
-    "/lovable-uploads/bb50362c-6879-4868-bbc9-c6e051fd8d7d.png",
+    "header1.png",
+    "header2.png",
+    "header3.png",
+    "header4.png",
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
