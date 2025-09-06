@@ -140,6 +140,10 @@ const ServiceDetail = () => {
               <Button size="lg" className="button-gradient px-8 py-6 text-lg font-medium">
                 Book {service.title} Now
                 <ArrowRight className="w-5 h-5 ml-2" />
+                onClick={() =>
+                  window.open(
+                           "https://docs.google.com/forms/d/e/1FAIpQLSdMPi0v34Bt5_rMaSi-ULBxglVdVpPAXLZzpb5n_dE4r4O-_g/viewform?usp=dialog",
+                  )
               </Button>
               <Link to="/services">
                 <Button variant="outline" size="lg" className="px-8 py-6 text-lg">
