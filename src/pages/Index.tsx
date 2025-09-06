@@ -32,18 +32,7 @@ const Index = () => {
 
         {/* Content overlay */}
         <div className="relative z-10 px-4">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="inline-block mb-4 px-4 py-1.5 rounded-full glass"
-          >
-            <span className="text-sm font-medium text-foreground">
-              <Sparkles className="w-4 h-4 inline-block mr-2" />
-              Professional laundry & dry cleaning at your doorstep
-            </span>
-          </motion.div>
-
+          
           <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-center text-white drop-shadow-lg">
             <span className="opacity-90">
               <TextGenerateEffect words="DryBrite" />
