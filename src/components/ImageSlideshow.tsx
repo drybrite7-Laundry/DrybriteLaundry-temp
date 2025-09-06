@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const ImageSlideshow = () => {
   const images = [
@@ -13,30 +13,26 @@ const ImageSlideshow = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % images.length);
-    }, 4000); // Change every 4 seconds
+    }, 4000); // 4s per slide
     return () => clearInterval(interval);
   }, [images.length]);
 
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentImageIndex}
+    <div className="absolute inset-0 z-0 overflow-hidden">
+      {images.map((img, index) => (
+        <motion.img
+          key={index}
+          src={img}
+          alt={`Slide ${index + 1}`}
+          className="absolute inset-0 w-full h-full object-cover"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
-          className="absolute inset-0"
-        >
-          <img
-            src={images[currentImageIndex]}
-            alt="Laundry service"
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
-      </AnimatePresence>
-      {/* Dark overlay so text is visible */}
-      <div className="absolute inset-0 bg-black/40" />
+          animate={{ opacity: currentImageIndex === index ? 0.35 : 0 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+        />
+      ))}
+
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/60 to-background/80" />
     </div>
   );
 };
