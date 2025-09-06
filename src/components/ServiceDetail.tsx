@@ -142,7 +142,7 @@ const ServiceDetail = () => {
                 <ArrowRight className="w-5 h-5 ml-2" />
                 onClick={() =>
                   window.open(
-                           "https://docs.google.com/forms/d/e/1FAIpQLSdMPi0v34Bt5_rMaSi-ULBxglVdVpPAXLZzpb5n_dE4r4O-_g/viewform?usp=dialog",
+                           "https://docs.google.com/forms/d/e/1FAIpQLSdMPi0v34Bt5_rMaSi-ULBxglVdVpPAXLZzpb5n_dE4r4O-_g/viewform?usp=header","_Blank"
                   )
               </Button>
               <Link to="/services">
