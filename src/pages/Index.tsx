@@ -40,6 +40,60 @@ const Index = () => {
     }} className="relative container px-4 pb-20 text-center">
         {/* Background with Image Slideshow */}
         <ImageSlideshow />
+
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const images = [
+  "/images/header1.png",
+  "/images/header2.png",
+  "/images/header3.png",
+  "/images/header4.png",
+];
+
+export default function ImageSlideshow() {
+  const [index, setIndex] = useState(0);
+
+  // Auto-change every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="relative w-full h-[500px] overflow-hidden rounded-2xl">
+      <AnimatePresence>
+        <motion.img
+          key={index}
+          src={images[index]}
+          alt={`Slide ${index + 1}`}
+          className="absolute w-full h-full object-cover"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+        />
+      </AnimatePresence>
+
+      {/* Dots navigation */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setIndex(i)}
+            className={`w-3 h-3 rounded-full ${
+              i === index ? "bg-white" : "bg-gray-400"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+        
         <div className="absolute inset-0 -z-10 laundry-hero-bg" />
         
         <motion.div initial={{
