@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import Footer from "@/components/Footer";
+import ImageSlideshow from "@/components/ImageSlideshow";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { Link } from "react-router-dom";
 const Index = () => {
@@ -37,7 +38,8 @@ const Index = () => {
       duration: 0.5,
       delay: 0.2
     }} className="relative container px-4 pb-20 text-center">
-        {/* Background */}
+        {/* Background with Image Slideshow */}
+        <ImageSlideshow />
         <div className="absolute inset-0 -z-10 laundry-hero-bg" />
         
         <motion.div initial={{

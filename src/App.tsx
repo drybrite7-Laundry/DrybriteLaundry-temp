@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import OfferBar from "./components/OfferBar";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import ServiceDetail from "./components/ServiceDetail";
@@ -20,6 +21,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <div className="min-h-screen bg-background">
+        <OfferBar />
         <Toaster />
         <Sonner />
         <BrowserRouter>
