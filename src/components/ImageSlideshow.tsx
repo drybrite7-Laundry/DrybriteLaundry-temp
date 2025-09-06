@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const ImageSlideshow = () => {
   const images = [
-    "/images/header1.png",
     "/images/header2.png",
     "/images/header3.png",
     "/images/header4.png",
