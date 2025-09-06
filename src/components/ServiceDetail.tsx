@@ -8,28 +8,26 @@ import Footer from "@/components/Footer";
 
 const ServiceDetail = () => {
   const { serviceId } = useParams();
-  const service = services.find(s => s.id === serviceId);
-  
+  const service = services.find((s) => s.id === serviceId);
+
   if (!service) {
     return <Navigate to="/services" replace />;
   }
 
-  const relatedServices = services
-    .filter(s => s.id !== service.id)
-    .slice(0, 3);
+  const relatedServices = services.filter((s) => s.id !== service.id).slice(0, 3);
 
   const benefits = [
     "Professional equipment and techniques",
     "Eco-friendly cleaning solutions",
     "Quality guarantee on all services",
     "Convenient pickup and delivery",
-    "Expert fabric care specialists"
+    "Expert fabric care specialists",
   ];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
-      
+
       {/* Breadcrumb */}
       <div className="container px-4 pt-32 pb-8">
         <nav className="flex items-center space-x-2 text-sm text-foreground/60">
@@ -50,16 +48,12 @@ const ServiceDetail = () => {
           className="max-w-4xl mx-auto"
         >
           <div className="flex items-center mb-6">
-            <div className="text-primary mr-4">
-              {service.icon}
-            </div>
+            <div className="text-primary mr-4">{service.icon}</div>
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
                 {service.title}
               </h1>
-              <p className="text-xl text-foreground/70">
-                {service.subtitle}
-              </p>
+              <p className="text-xl text-foreground/70">{service.subtitle}</p>
             </div>
           </div>
 
@@ -70,8 +64,8 @@ const ServiceDetail = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mb-8 rounded-lg overflow-hidden"
             >
-              <img 
-                src={service.image} 
+              <img
+                src={service.image}
                 alt={service.title}
                 className="w-full h-64 md:h-80 object-cover"
               />
@@ -134,16 +128,22 @@ const ServiceDetail = () => {
               Ready to Experience Professional Care?
             </h2>
             <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
-              Book your {service.title.toLowerCase()} service today and enjoy convenient pickup and delivery.
+              Book your {service.title.toLowerCase()} service today and enjoy
+              convenient pickup and delivery.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" className="button-gradient px-8 py-6 text-lg font-medium">
-                Book {service.title} Now
-                <ArrowRight className="w-5 h-5 ml-2" />
+              <Button
+                size="lg"
+                className="button-gradient px-8 py-6 text-lg font-medium"
                 onClick={() =>
                   window.open(
-                           "https://docs.google.com/forms/d/e/1FAIpQLSdMPi0v34Bt5_rMaSi-ULBxglVdVpPAXLZzpb5n_dE4r4O-_g/viewform?usp=header","_Blank"
+                    "https://docs.google.com/forms/d/e/1FAIpQLSdMPi0v34Bt5_rMaSi-ULBxglVdVpPAXLZzpb5n_dE4r4O-_g/viewform?usp=header",
+                    "_blank"
                   )
+                }
+              >
+                Book {service.title} Now
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
               <Link to="/services">
                 <Button variant="outline" size="lg" className="px-8 py-6 text-lg">
