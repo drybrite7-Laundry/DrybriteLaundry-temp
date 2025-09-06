@@ -21,12 +21,12 @@ const About = () => {
           </h2>
           <p className="text-lg text-foreground/70 max-w-4xl mx-auto mb-8">
             <p class="text-lg text-foreground/70 max-w-4xl mx-auto mb-8">
-  **Our Mission:** At Drybrite Laundry, our mission is to redefine convenience and quality in the cleaning industry. We are dedicated to providing exceptional, reliable, and affordable laundry and cleaning services...
-</p>
+                   **Our Mission:** At Drybrite Laundry, our mission is to redefine convenience and quality in the cleaning industry. We are dedicated to providing exceptional, reliable, and affordable laundry and cleaning services...
+             </p>
 
-<p class="text-lg text-foreground/70 max-w-4xl mx-auto mb-8">
-  **Our Vision:** Our vision is to become the leading and most trusted name in laundry and fabric care, not just in our local area but as a benchmark for quality and service...
-</p>
+            <p class="text-lg text-foreground/70 max-w-4xl mx-auto mb-8">
+                    **Our Vision:** Our vision is to become the leading and most trusted name in laundry and fabric care, not just in our local area but as a benchmark for quality and service...
+             </p>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
             <div className="space-y-4">
               <h3 className="text-xl font-semibold text-primary">Why Choose Us?</h3>
