@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { FeaturesSection } from "@/components/features/FeaturesSection";
-import ServicesList from "@/components/ServicesList";
+import ServicesSidebar from "@/components/ServicesSidebar";
 
 const Services = () => {
   return (
@@ -18,8 +18,8 @@ const Services = () => {
         </p>
       </section>
 
-      {/* Services List */}
-      <ServicesList />
+      {/* Services Sidebar */}
+      <ServicesSidebar />
 
       {/* Features Section */}
       <div className="bg-background">
