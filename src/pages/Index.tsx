@@ -40,9 +40,11 @@ const Index = () => {
     }} className="relative container px-4 pb-20 text-center">
         {/* Background with Image Slideshow */}
         {/* Background with Image Slideshow */}
-           
-               <ImageSlideshow />
-           
+
+        <div className="absolute inset-0 -z-10">
+                <ImageSlideshow />
+        </div>
+
         
         <motion.div initial={{
         opacity: 0
