@@ -1,10 +1,8 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import TestimonialsSection from "@/components/TestimonialsSection";
-
 const About = () => {
-  return (
-    <div className="min-h-screen bg-background text-foreground">
+  return <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       
       {/* Header */}
@@ -12,9 +10,7 @@ const About = () => {
         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
           About Drybrite Laundry
         </h1>
-        <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto">
-          Your trusted partner for professional laundry services in IIIT Jhalwa, Prayagraj. Quality care, convenience, and excellence delivered to your doorstep.
-        </p>
+        <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto">At Drybrite Laundry, we're dedicated to making your life easier with our expert laundry and cleaning services. We offer a full range of solutions, from gentle dry cleaning to convenient bulk laundry, and even specialized care for your shoes, bags, and home furnishings. Our mission is to provide professional, reliable, and affordable cleaning, ensuring your clothes and home are always fresh and bright.</p>
       </section>
 
       {/* About Content with Moving Images */}
@@ -56,8 +52,6 @@ const About = () => {
 
       {/* Footer */}
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default About;
