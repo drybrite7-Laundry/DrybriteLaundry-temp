@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const ImageSlideshow = () => {
   const images = [
-    "header1.png",
-    "header2.png",
-    "header3.png",
-    "header4.png",
+    "public/images/header1.png",
+    "public/images/header2.png",
+    "public/images/header3.png",
+    "public/images/header4.png",
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
