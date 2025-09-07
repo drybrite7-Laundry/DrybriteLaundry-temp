@@ -25,52 +25,58 @@ const Index = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="relative h-[90vh] flex flex-col items-center justify-center text-center overflow-hidden"
+        className="relative h-[80vh] flex flex-col items-center justify-center text-center px-4 bg-gradient-to-br from-primary/10 to-background"
       >
-        {/* Background Slideshow */}
-        <ImageSlideshow />
-
-        {/* Content overlay */}
-        <div className="relative z-10 px-4">
-          
-      <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-center text-[#153257]">
-             <span className="opacity-90">
-          <TextGenerateEffect words="DryBrite" />
-            </span>
+        <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-center text-foreground">
+          <span className="opacity-90">
+            <TextGenerateEffect words="DryBrite" />
+          </span>
           <br />
-            <span className="font-medium">
-       <TextGenerateEffect words="Laundry Services" />
-            </span>
-       </h1>
+          <span className="font-medium">
+            <TextGenerateEffect words="Laundry Services" />
+          </span>
+        </h1>
 
-            <motion.p
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.6 }}
-  className="text-lg md:text-xl text-[#153257] mb-8 max-w-2xl mx-auto"
-           >
-  Welcome to Drybrite Laundry, your one-stop solution for all your garment and home cleaning needs.{" "}
-  <span className="font-medium">Book your pickup in minutes.</span>
-           </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="text-lg md:text-xl text-foreground/80 mb-8 max-w-2xl mx-auto"
+        >
+          Welcome to Drybrite Laundry, your one-stop solution for all your garment and home cleaning needs.{" "}
+          <span className="font-medium">Book your pickup in minutes.</span>
+        </motion.p>
 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          className="flex flex-col sm:flex-row gap-4 items-center justify-center"
+        >
+          <Button onClick={handleBookNow} size="lg" className="button-gradient">
+            Book Pickup Now
+          </Button>
+          <Button size="lg" variant="outline" asChild>
+            <Link to="/services">
+              View Services <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
+          </Button>
+        </motion.div>
+      </motion.section>
 
+      {/* Image Slideshow Section */}
+      <section className="py-12">
+        <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
-            className="flex flex-col sm:flex-row gap-4 items-center justify-center"
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="relative h-[60vh] rounded-2xl overflow-hidden"
           >
-            <Button onClick={handleBookNow} size="lg" className="button-gradient">
-              Book Pickup Now
-            </Button>
-            <Button size="lg" variant="link" className="text-white" asChild>
-              <Link to="/services">
-                View Services <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
-            </Button>
+            <ImageSlideshow />
           </motion.div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Services Carousel */}
       <ServicesCarousel />

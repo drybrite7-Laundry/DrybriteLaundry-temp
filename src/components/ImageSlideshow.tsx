@@ -18,20 +18,19 @@ const ImageSlideshow = () => {
   }, [images.length]);
 
   return (
-    <div className="absolute inset-0 w-full h-full overflow-hidden">
+    <div className="relative w-full h-full overflow-hidden rounded-2xl">
       {images.map((img, index) => (
         <motion.img
           key={index}
           src={img}
-          alt={`Slide ${index + 1}`}
+          alt={`Drybrite laundry service ${index + 1}`}
           className="absolute inset-0 w-full h-full object-cover"
           initial={{ opacity: 0 }}
           animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
           transition={{ duration: 1 }}
         />
       ))}
-      {/* optional: remove overlay so no grey */}
-      {/* <div className="absolute inset-0 bg-black/30"></div> */}
+      <div className="absolute inset-0 bg-black/20 rounded-2xl"></div>
     </div>
   );
 };
