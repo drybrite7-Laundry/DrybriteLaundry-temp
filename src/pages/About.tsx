@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import Slider from "react-slick";
+import ImageSlideshow from "@/components/ImageSlideshow"; // ✅ Reuse your existing slideshow
 
 // Import Gallery Images
 import G1 from "@/assets/G1.jpg";
@@ -14,19 +14,6 @@ import G7 from "@/assets/G7.jpg";
 
 const About = () => {
   const galleryImages = [G1, G2, G3, G4, G5, G6, G7];
-
-  // Slider settings
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 600,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2500,
-    arrows: true,
-    adaptiveHeight: true,
-  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -116,21 +103,11 @@ const About = () => {
         </div>
       </section>
 
-      {/* ✅ Gallery Section (Slideshow) */}
+      {/* ✅ Gallery Section (Custom Slideshow) */}
       <section className="py-12 bg-muted/30">
         <div className="container px-4 text-center">
           <h2 className="text-3xl font-bold mb-8 text-foreground">Our Gallery</h2>
-          <Slider {...settings}>
-            {galleryImages.map((img, index) => (
-              <div key={index} className="px-4">
-                <img
-                  src={img}
-                  alt={`Gallery ${index + 1}`}
-                  className="w-full h-[450px] object-cover rounded-2xl shadow-md"
-                />
-              </div>
-            ))}
-          </Slider>
+          <ImageSlideshow images={galleryImages} height="h-[450px]" interval={3000} />
         </div>
       </section>
 
