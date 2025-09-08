@@ -8,7 +8,16 @@ import ImageSlideshow from "@/components/ImageSlideshow";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { Link } from "react-router-dom";
 
-<ImageSlideshow images={["/images/header2.png", "/images/header3.png", "/images/header4.png"]} />
+const headerImages = [
+  "/images/header2.png",
+  "/images/header3.png",
+  "/images/header4.png",
+];
+
+
+
+<ImageSlideshow images={headerImages} />
+
 
 const Index = () => {
   const handleBookNow = () => {
@@ -75,7 +84,7 @@ const Index = () => {
             transition={{ duration: 0.5, delay: 0.8 }}
             className="relative h-[60vh] rounded-2xl overflow-hidden"
           >
-            <ImageSlideshow />
+            <ImageSlideshow images={headerImages} />
           </motion.div>
         </div>
       </section>
