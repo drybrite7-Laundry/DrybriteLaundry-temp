@@ -3,13 +3,13 @@ import Footer from "@/components/Footer";
 import TestimonialsSection from "@/components/TestimonialsSection";
 
 // Import Gallery Images
-import G1 from "@/assets/images/G1.jpg";
-import G2 from "@/assets/images/G2.jpg";
-import G3 from "@/assets/images/G3.jpg";
-import G4 from "@/assets/images/G4.jpg";
-import G5 from "@/assets/images/G5.jpg";
-import G6 from "@/assets/images/G6.jpg";
-import G7 from "@/assets/images/G7.jpg";
+import G1 from "@/assets/G1.jpg";
+import G2 from "@/assets/G2.jpg";
+import G3 from "@/assets/G3.jpg";
+import G4 from "@/assets/G4.jpg";
+import G5 from "@/assets/G5.jpg";
+import G6 from "@/assets/G6.jpg";
+import G7 from "@/assets/G7.jpg";
 
 const About = () => {
   return (
