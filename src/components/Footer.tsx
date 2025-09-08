@@ -21,7 +21,7 @@ const Footer = () => {
                 <Button
                       variant="outline"
                       className="glass"
-                      onClick={() => window.open('https://api.whatsapp.com/send/?phone=%2B917487864406&text&type=phone_number&app_absent=0')}>
+                      onClick={() => window.open('https://api.whatsapp.com/send/?phone=%2B919236954406&text&type=phone_number&app_absent=0')}>
                       <MessageCircle className="w-4 h-4 mr-2" />
                          WhatsApp
                 </Button>
@@ -54,12 +54,12 @@ const Footer = () => {
                   <span className="text-sm text-foreground/70">IIIT Jhalwa, Prayagraj</span>
                 </li>
                 <li>
-                  <a href="https://api.whatsapp.com/send/?phone=%2B917487864406&text&type=phone_number&app_absent=0" className="text-sm text-foreground/70 hover:text-primary transition-colors">
+                  <a href="https://api.whatsapp.com/send/?phone=%2B919236954406&text&type=phone_number&app_absent=0" className="text-sm text-foreground/70 hover:text-primary transition-colors">
                     WhatsApp Booking
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+917487864406" className="text-sm text-foreground/70 hover:text-primary transition-colors">Call: +91 74878 64406</a>
+                  <a href="tel:+919236954406" className="text-sm text-foreground/70 hover:text-primary transition-colors">Call: +91 92369 54406</a>
                 </li>
               </ul>
             </div>
