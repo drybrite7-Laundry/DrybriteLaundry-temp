@@ -50,8 +50,8 @@ const Navigation = () => {
     name: "Services",
     href: "/services"
   }, {
-    name: "Reviews",
-    href: "/reviews"
+    name: "Pricing", 
+    href: "/pricing"
   }, {
     name: "About",
     href: "/about"
