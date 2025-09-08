@@ -1,32 +1,33 @@
 import { motion } from "framer-motion";
-import { Shirt, Sparkles, Shield, Home, Clock } from "lucide-react";
+import { Shirt, WashingMachine, PackageOpen, Star, Home } from "lucide-react";
 
 const ServicesCarousel = () => {
+  // Updated list of services
   const services = [
     {
+      icon: <WashingMachine className="w-8 h-8" />,
+      title: "Washing Services",
+      description: "Perfect for daily wear, casuals, and semi-formals."
+    },
+    {
+      icon: <PackageOpen className="w-8 h-8" />,
+      title: "Dry Cleaning Services",
+      description: "Recommended for delicate and luxury fabrics."
+    },
+    {
       icon: <Shirt className="w-8 h-8" />,
-      title: "Washing & Dry Cleaning",
-      description: "Professional care for all your garments"
-    },
-    {
-      icon: <Sparkles className="w-8 h-8" />,
-      title: "Ironing & Pressing",
-      description: "Crisp, wrinkle-free finishing"
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: "Stain Treatment",
-      description: "Expert removal of tough stains"
+      title: "Ironing / Pressing Services",
+      description: "Professional and crisp finishing."
     },
     {
       icon: <Home className="w-8 h-8" />,
-      title: "Household Items",
-      description: "Curtains, carpets, and home textiles"
+      title: "Household & Home Care",
+      description: "Expert care for large, bulky items."
     },
     {
-      icon: <Clock className="w-8 h-8" />,
-      title: "Express Service",
-      description: "12-hour FastTrack option available"
+      icon: <Star className="w-8 h-8" />,
+      title: "Premium & Special Care",
+      description: "For luxury brands, stains, and special fabrics."
     }
   ];
 
