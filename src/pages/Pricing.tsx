@@ -1,101 +1,116 @@
+import { useState } from 'react';
 import { motion } from "framer-motion";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { services } from "@/config/services";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, Shirt, WashingMachine, PackageOpen, Star, Home } from "lucide-react";
 
-// Pricing data for each service
+// Placeholder components for Navigation, Footer, and UI elements.
+// In a full application, these would be imported from your component library.
+const Navigation = () => (
+  <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <div className="container flex h-14 items-center px-4 md:px-6 justify-center">
+      <nav className="flex items-center space-x-4">
+        <a href="#" className="font-bold text-lg">Drybrite Laundry</a>
+      </nav>
+    </div>
+  </header>
+);
+const Footer = () => (
+  <footer className="py-12 bg-gray-100 dark:bg-gray-800">
+    <div className="container text-center text-sm text-muted-foreground">
+      © {new Date().getFullYear()} Drybrite Laundry. All rights reserved.
+    </div>
+  </footer>
+);
+const Button = ({ onClick, children, className, size = "md", variant = "default" }) => {
+  const baseClasses = "inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background";
+  const sizeClasses = {
+    "lg": "h-12 px-6 text-lg",
+    "md": "h-10 px-4",
+  }[size];
+  const variantClasses = {
+    "default": "bg-primary text-primary-foreground hover:bg-primary/90",
+    "outline": "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+  }[variant];
+  return (
+    <button onClick={onClick} className={`${baseClasses} ${sizeClasses} ${variantClasses} ${className}`}>
+      {children}
+    </button>
+  );
+};
+const Card = ({ children, className }) => <div className={`rounded-xl border bg-card text-card-foreground shadow-sm ${className}`}>{children}</div>;
+const CardHeader = ({ children, className }) => <div className={`flex flex-col space-y-1.5 p-6 ${className}`}>{children}</div>;
+const CardTitle = ({ children, className }) => <h3 className={`font-semibold tracking-tight text-2xl ${className}`}>{children}</h3>;
+const CardDescription = ({ children, className }) => <p className={`text-sm text-muted-foreground ${className}`}>{children}</p>;
+const CardContent = ({ children, className }) => <div className={`p-6 pt-0 ${className}`}>{children}</div>;
+const Badge = ({ children, className, variant = "default" }) => {
+  const baseClasses = "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2";
+  const variantClasses = {
+    "default": "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
+    "secondary": "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
+  }[variant];
+  return (
+    <div className={`${baseClasses} ${variantClasses} ${className}`}>{children}</div>
+  );
+};
+
+// New services data based on the provided text
+const services = [
+  { id: "washing-services", title: "Washing Services", subtitle: "For daily wear, casuals, and semi-formals.", icon: <WashingMachine className="w-10 h-10" /> },
+  { id: "dry-cleaning-services", title: "Dry Cleaning Services", subtitle: "For delicate and luxury fabrics.", icon: <PackageOpen className="w-10 h-10" /> },
+  { id: "ironing-services", title: "Ironing / Pressing Services", subtitle: "Perfectly pressed clothes.", icon: <Shirt className="w-10 h-10" /> },
+  { id: "household-care", title: "Household & Home Care", subtitle: "Expert care for large, bulky items.", icon: <Home className="w-10 h-10" /> },
+  { id: "special-care-services", title: "Premium & Special Care", subtitle: "For luxury brands and special garments.", icon: <Star className="w-10 h-10" /> },
+];
+
+// New pricing data with sample prices
 const pricingData = {
-  "dry-cleaning": {
-    basePrice: "₹150",
+  "washing-services": {
+    basePrice: "₹50",
     items: [
-      { item: "Shirts/Blouses", price: "₹80" },
-      { item: "Trousers/Pants", price: "₹100" },
-      { item: "Suits", price: "₹250" },
-      { item: "Dresses", price: "₹150" },
-      { item: "Coats/Jackets", price: "₹200" }
+      { item: "Shirts & Trousers", price: "₹50" },
+      { item: "Jeans", price: "₹60" },
+      { item: "Winter Wear", price: "₹100" },
+      { item: "Bed sheets", price: "₹80" },
+      { item: "Blankets (light)", price: "₹250" },
     ]
   },
-  "premium-laundry": {
-    basePrice: "₹120",
-    items: [
-      { item: "Shirt/T-shirt", price: "₹50" },
-      { item: "Trousers", price: "₹70" },
-      { item: "Bedsheets", price: "₹80" },
-      { item: "Towels", price: "₹40" },
-      { item: "Delicate Items", price: "₹100" }
-    ]
-  },
-  "laundry-by-kg": {
-    basePrice: "₹60/kg",
-    items: [
-      { item: "Regular Clothes", price: "₹60/kg" },
-      { item: "Heavy Items", price: "₹80/kg" },
-      { item: "Minimum Order", price: "3kg" },
-      { item: "Express Service", price: "+₹20/kg" }
-    ]
-  },
-  "steam-ironing": {
-    basePrice: "₹30",
-    items: [
-      { item: "Shirts", price: "₹25" },
-      { item: "Trousers", price: "₹35" },
-      { item: "Dresses", price: "₹40" },
-      { item: "Sarees", price: "₹50" },
-      { item: "Bed Linens", price: "₹30" }
-    ]
-  },
-  "shoe-cleaning": {
+  "dry-cleaning-services": {
     basePrice: "₹200",
     items: [
-      { item: "Casual Shoes", price: "₹150" },
-      { item: "Formal Shoes", price: "₹200" },
-      { item: "Sports Shoes", price: "₹180" },
-      { item: "Boots", price: "₹250" },
-      { item: "Leather Care", price: "+₹50" }
+      { item: "Suits & Blazers", price: "₹250" },
+      { item: "Formal Shirts", price: "₹150" },
+      { item: "Sarees (silk/designer)", price: "₹350" },
+      { item: "Heavy Curtains", price: "₹500" },
+      { item: "Leather Jackets", price: "₹600" },
     ]
   },
-  "bag-cleaning": {
-    basePrice: "₹300",
+  "ironing-services": {
+    basePrice: "₹20",
     items: [
-      { item: "Handbags", price: "₹250" },
-      { item: "Backpacks", price: "₹200" },
-      { item: "Laptop Bags", price: "₹300" },
-      { item: "Travel Bags", price: "₹400" },
-      { item: "Leather Bags", price: "₹350" }
+      { item: "Shirts & Trousers", price: "₹20" },
+      { item: "Sarees", price: "₹40" },
+      { item: "Suits & Blazers", price: "₹100" },
+      { item: "School Uniforms", price: "₹30" },
+      { item: "Household Linen", price: "₹50" },
     ]
   },
-  "sofa-cleaning": {
-    basePrice: "₹1,500",
+  "household-care": {
+    basePrice: "₹200",
     items: [
-      { item: "2-Seater Sofa", price: "₹1,200" },
-      { item: "3-Seater Sofa", price: "₹1,500" },
-      { item: "5-Seater Sofa", price: "₹2,000" },
-      { item: "Recliner", price: "₹800" },
-      { item: "Cushion Cleaning", price: "₹100/piece" }
+      { item: "Curtains", price: "₹200" },
+      { item: "Sofa & Cushion Covers", price: "₹150" },
+      { item: "Bed Linen", price: "₹120" },
+      { item: "Blankets", price: "₹300" },
+      { item: "Carpets", price: "₹400" },
     ]
   },
-  "carpet-cleaning": {
-    basePrice: "₹80/sqft",
+  "special-care-services": {
+    basePrice: "₹500",
     items: [
-      { item: "Regular Carpet", price: "₹80/sqft" },
-      { item: "Persian Rugs", price: "₹120/sqft" },
-      { item: "Minimum Charge", price: "₹500" },
-      { item: "Stain Treatment", price: "+₹50/stain" },
-      { item: "Deodorizing", price: "+₹100" }
-    ]
-  },
-  "curtain-cleaning": {
-    basePrice: "₹150/panel",
-    items: [
-      { item: "Light Curtains", price: "₹100/panel" },
-      { item: "Heavy Curtains", price: "₹150/panel" },
-      { item: "Silk Curtains", price: "₹200/panel" },
-      { item: "Blackout Curtains", price: "₹180/panel" },
-      { item: "Installation", price: "₹50/panel" }
+      { item: "Stain Removal", price: "₹200" },
+      { item: "Delicate Fabrics", price: "₹300" },
+      { item: "Luxury Brands", price: "₹500" },
+      { item: "Perfumed Wash", price: "₹100" },
+      { item: "Wedding Wear", price: "₹1000" },
     ]
   }
 };
@@ -109,7 +124,7 @@ const Pricing = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground font-sans">
       <Navigation />
       
       {/* Header */}
@@ -120,10 +135,10 @@ const Pricing = () => {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-            Service Pricing
+            Our Services & Pricing
           </h1>
           <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto">
-            Transparent and affordable pricing for all your laundry and cleaning needs in IIIT Jhalwa, Prayagraj.
+            Transparent and affordable pricing for all your clothing and household cleaning needs.
           </p>
           <Badge variant="secondary" className="mt-4 px-4 py-2 text-sm">
             Free Pickup & Delivery for orders above ₹200
@@ -135,8 +150,10 @@ const Pricing = () => {
       <section className="container px-4 pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
-            const pricing = pricingData[service.id as keyof typeof pricingData];
+            const pricing = pricingData[service.id];
             
+            if (!pricing) return null; // Safety check
+
             return (
               <motion.div
                 key={service.id}
