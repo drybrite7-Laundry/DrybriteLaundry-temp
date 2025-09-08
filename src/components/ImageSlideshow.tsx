@@ -15,18 +15,16 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
-  if (!images || images.length === 0) return;
-  const interval = setInterval(() => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-  }, 5000);
-  return () => clearInterval(interval);
-}, [images]);
+    if (!images || images.length === 0) return;
 
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, interval);
 
     return () => clearInterval(timer);
   }, [images, interval]);
 
-  if (images.length === 0) return null;
+  if (!images || images.length === 0) return null;
 
   return (
     <div className={`relative w-full overflow-hidden rounded-2xl ${height}`}>
