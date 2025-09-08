@@ -15,11 +15,13 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
-    if (images.length === 0) return;
+  if (!images || images.length === 0) return;
+  const interval = setInterval(() => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  }, 5000);
+  return () => clearInterval(interval);
+}, [images]);
 
-    const timer = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % images.length);
-    }, interval);
 
     return () => clearInterval(timer);
   }, [images, interval]);
