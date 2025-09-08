@@ -252,7 +252,7 @@ const Pricing = () => {
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button variant="outline" size="lg" className="px-8 py-6 text-lg">
-              Call: +91-XXXXX-XXXXX
+              Call: +91-92369 54406
             </Button>
           </div>
         </motion.div>
