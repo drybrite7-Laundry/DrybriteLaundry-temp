@@ -8,6 +8,8 @@ import ImageSlideshow from "@/components/ImageSlideshow";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { Link } from "react-router-dom";
 
+<ImageSlideshow images={["/images/header2.png", "/images/header3.png", "/images/header4.png"]} />
+
 const Index = () => {
   const handleBookNow = () => {
     window.open(
