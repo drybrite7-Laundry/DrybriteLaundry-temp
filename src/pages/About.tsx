@@ -116,7 +116,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* ✅ Gallery Section (Slideshow instead of Grid) */}
+      {/* ✅ Gallery Section (Slideshow) */}
       <section className="py-12 bg-muted/30">
         <div className="container px-4 text-center">
           <h2 className="text-3xl font-bold mb-8 text-foreground">Our Gallery</h2>
@@ -134,7 +134,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* ✅ Trusted by Our Community (Testimonials Section) */}
+      {/* ✅ Trusted by Our Community */}
       <TestimonialsSection />
 
       {/* Footer */}
