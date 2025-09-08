@@ -4,22 +4,11 @@ import { Check, ArrowRight, Shirt, WashingMachine, PackageOpen, Star, Home } fro
 
 // Placeholder components for Navigation, Footer, and UI elements.
 // In a full application, these would be imported from your component library.
-const Navigation = () => (
-  <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-    <div className="container flex h-14 items-center px-4 md:px-6 justify-center">
-      <nav className="flex items-center space-x-4">
-        <a href="#" className="font-bold text-lg">Drybrite Laundry</a>
-      </nav>
-    </div>
-  </header>
-);
-const Footer = () => (
-  <footer className="py-12 bg-gray-100 dark:bg-gray-800">
-    <div className="container text-center text-sm text-muted-foreground">
-      © {new Date().getFullYear()} Drybrite Laundry. All rights reserved.
-    </div>
-  </footer>
-);
+// ✅ USE your existing shared components
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+
+
 const Button = ({ onClick, children, className, size = "md", variant = "default" }) => {
   const baseClasses = "inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background";
   const sizeClasses = {
