@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import Slider from "react-slick";
 
 // Import Gallery Images
 import G1 from "@/assets/G1.jpg";
@@ -12,6 +13,21 @@ import G6 from "@/assets/G6.jpg";
 import G7 from "@/assets/G7.jpg";
 
 const About = () => {
+  const galleryImages = [G1, G2, G3, G4, G5, G6, G7];
+
+  // Slider settings
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    arrows: true,
+    adaptiveHeight: true,
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
@@ -100,24 +116,21 @@ const About = () => {
         </div>
       </section>
 
-      {/* ✅ Gallery Section (before Trusted by Our Community / Testimonials) */}
+      {/* ✅ Gallery Section (Slideshow instead of Grid) */}
       <section className="py-12 bg-muted/30">
         <div className="container px-4 text-center">
           <h2 className="text-3xl font-bold mb-8 text-foreground">Our Gallery</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {[G1, G2, G3, G4, G5, G6, G7].map((img, index) => (
-              <div
-                key={index}
-                className="overflow-hidden rounded-2xl shadow-md hover:scale-105 transform transition"
-              >
+          <Slider {...settings}>
+            {galleryImages.map((img, index) => (
+              <div key={index} className="px-4">
                 <img
                   src={img}
                   alt={`Gallery ${index + 1}`}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-[450px] object-cover rounded-2xl shadow-md"
                 />
               </div>
             ))}
-          </div>
+          </Slider>
         </div>
       </section>
 
