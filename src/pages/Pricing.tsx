@@ -7,6 +7,8 @@ import { Check, ArrowRight, Shirt, WashingMachine, PackageOpen, Star, Home } fro
 // ✅ USE your existing shared components
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import OfferBar from "@/components/OfferBar";
+
 
 
 const Button = ({ onClick, children, className, size = "md", variant = "default" }) => {
@@ -114,8 +116,8 @@ const Pricing = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
-      <Navigation />
       <OfferBar />
+      <Navigation />
 
       
       {/* Header */}
