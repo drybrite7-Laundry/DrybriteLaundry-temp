@@ -78,7 +78,7 @@ const Contact = () => {
                 <Phone className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-foreground">Quick Contact</h3>
-                  <a href="tel:+917487864406" className="text-foreground/70 hover:text-primary transition-colors">+91 74878 64406</a>
+                  <a href="tel:+919236954406" className="text-foreground/70 hover:text-primary transition-colors">+919236954406</a>
                 </div>
               </div>
             </div>
@@ -114,7 +114,7 @@ const Contact = () => {
             <MessageCircle className="w-12 h-12 text-primary mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2 text-foreground">WhatsApp</h3>
             <p className="text-foreground/70">
-              <a href="https://wa.me/917487864406" className="text-foreground/70 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">+91 74878 64406</a><br />
+              <a href="https://wa.me/+919236954406" className="text-foreground/70 hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">++91 92369 54406</a><br />
               Quick booking & updates
             </p>
           </motion.div>
