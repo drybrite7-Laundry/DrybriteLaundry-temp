@@ -43,7 +43,7 @@ const allServices = [
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-gradient-to-r from-green-500 to-green-700 text-white py-10 mt-10">
+    <footer className="w-full bg-gradient-to-r from-green-700 to-green-900 text-white py-10 mt-10">
       <div className="container px-4">
         <div className="rounded-xl p-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
