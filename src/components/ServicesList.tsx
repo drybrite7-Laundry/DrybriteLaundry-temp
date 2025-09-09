@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, WashingMachine, PackageOpen, Star, Home, Shirt } from "lucide-react";
+import { Link } from "react-router-dom";  // 👈 add this at the top
+
 
 // The Button component from the previous file, for a single-file application
 const Button = ({ onClick, children, className, size = "lg" }) => {
@@ -97,10 +99,14 @@ const ServicesList = () => {
                 {service.subtitle}
               </p>
 
-              <div className="flex items-center text-primary text-sm font-medium group-hover:text-secondary transition-colors duration-200">
-                Learn More
-                <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
-              </div>
+              <Link
+                    to="/pricing"
+                       className="flex items-center text-primary text-sm font-medium group-hover:text-secondary transition-colors duration-200"
+               >
+                    Learn More
+                  <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
+               </Link>
+
             </motion.div>
           </motion.div>
         ))}
@@ -114,7 +120,7 @@ const ServicesList = () => {
       >
         <Button
           size="lg"
-          className="button-gradient px-8 py-6 text-1g font-medium"
+          className="button-gradient px-8 py-6 text-lg font-medium"
           onClick={() => {
             window.open('https://docs.google.com/forms/d/e/1FAIpQLSdMPi0v34Bt5_rMaSi-ULBxglVdVpPAXLZzpb5n_dE4r4O-_g/viewform?usp=header', '_blank');
           }}
