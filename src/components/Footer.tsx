@@ -1,5 +1,4 @@
 import { Phone, MessageCircle, MapPin, WashingMachine, PackageOpen, Star, Home, Shirt } from "lucide-react";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 // Reusable Button component
@@ -24,36 +23,11 @@ const Button = ({ onClick, children, className, variant = "solid" }) => {
 
 // Services list
 const allServices = [
-  {
-    id: "washing-services",
-    title: "Washing Services",
-    subtitle: "For daily wear, casuals, and semi-formals.",
-    icon: <WashingMachine className="w-10 h-10" />,
-  },
-  {
-    id: "dry-cleaning-services",
-    title: "Dry Cleaning Services",
-    subtitle: "For delicate and luxury fabrics.",
-    icon: <PackageOpen className="w-10 h-10" />,
-  },
-  {
-    id: "ironing-services",
-    title: "Ironing / Pressing Services",
-    subtitle: "Perfectly pressed clothes.",
-    icon: <Shirt className="w-10 h-10" />,
-  },
-  {
-    id: "household-care",
-    title: "Household & Home Care",
-    subtitle: "Expert care for large, bulky items.",
-    icon: <Home className="w-10 h-10" />,
-  },
-  {
-    id: "special-care-services",
-    title: "Premium & Special Care",
-    subtitle: "For luxury brands and special garments.",
-    icon: <Star className="w-10 h-10" />,
-  },
+  { title: "Washing Services", icon: <WashingMachine className="w-10 h-10" /> },
+  { title: "Dry Cleaning Services", icon: <PackageOpen className="w-10 h-10" /> },
+  { title: "Ironing / Pressing Services", icon: <Shirt className="w-10 h-10" /> },
+  { title: "Household & Home Care", icon: <Home className="w-10 h-10" /> },
+  { title: "Premium & Special Care", icon: <Star className="w-10 h-10" /> },
 ];
 
 const Footer = () => {
@@ -101,10 +75,10 @@ const Footer = () => {
             <div className="space-y-4">
               <h4 className="font-medium text-foreground">Services</h4>
               <ul className="space-y-2">
-                {allServices.map((service) => (
-                  <li key={service.id}>
+                {allServices.map((service, index) => (
+                  <li key={index}>
                     <Link
-                      to={`/services/${service.id}`}
+                      to="/pricing"
                       className="text-sm text-foreground/70 hover:text-primary transition-colors"
                     >
                       {service.title}
