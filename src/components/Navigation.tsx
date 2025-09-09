@@ -62,7 +62,7 @@ const Navigation = () => {
   const handleBookNow = () => {
     window.open("https://docs.google.com/forms/d/e/1FAIpQLSdMPi0v34Bt5_rMaSi-ULBxglVdVpPAXLZzpb5n_dE4r4O-_g/viewform?usp=dialog", "_blank");
   };
-  return <header className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-300 rounded-full ${isScrolled ? "top-16 h-14 bg-card/80 backdrop-blur-xl border border-primary/20 scale-95 w-[80%] max-w-2xl" : "top-16 h-14 bg-card w-[85%] max-w-3xl border border-primary/10"}`}>
+  return <header className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-300 rounded-full ${isScrolled ? "top-16 h-14 bg-card/80 backdrop-blur-xl border border-primary/20 scale-95 w-[70%] max-w-2xl" : "top-16 h-14 bg-card w-[75%] max-w-3xl border border-primary/10"}`}>
       <div className="mx-auto h-full px-6 bg-transparent">
         <nav className="flex items-center justify-between h-full">
           <Link to="/" className="flex items-center gap-2">
