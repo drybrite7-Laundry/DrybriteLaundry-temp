@@ -263,7 +263,7 @@ const Pricing = () => {
       </section>
 
       {/* Footer */}
-      <Footer />
+      
     </div>
   );
 };
