@@ -1,5 +1,6 @@
-import { Phone, MessageCircle, MapPin, WashingMachine, PackageOpen, Star, Home, Shirt } from "lucide-react"; 
+import { Phone, MessageCircle, MapPin, WashingMachine, PackageOpen, Star, Home, Shirt } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 // Reusable Button component
 const Button = ({ onClick, children, className, variant = "solid" }) => {
@@ -56,11 +57,6 @@ const allServices = [
 ];
 
 const Footer = () => {
-  const handleLinkClick = (e, path) => {
-    e.preventDefault();
-    console.log(`Navigating to ${path}`);
-  };
-
   return (
     <footer className="w-full py-12 mt-20">
       <div className="container px-4">
@@ -107,13 +103,12 @@ const Footer = () => {
               <ul className="space-y-2">
                 {allServices.map((service) => (
                   <li key={service.id}>
-                    <a
-                      href="#"
-                      onClick={(e) => handleLinkClick(e, `/services/${service.id}`)}
+                    <Link
+                      to={`/services/${service.id}`}
                       className="text-sm text-foreground/70 hover:text-primary transition-colors"
                     >
                       {service.title}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -151,31 +146,28 @@ const Footer = () => {
               <h4 className="font-medium text-foreground">Legal</h4>
               <ul className="space-y-2">
                 <li>
-                  <a
-                    href="#"
-                    onClick={(e) => handleLinkClick(e, "/privacy-policy")}
+                  <Link
+                    to="/privacy-policy"
                     className="text-sm text-foreground/70 hover:text-primary transition-colors"
                   >
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    onClick={(e) => handleLinkClick(e, "/terms-of-service")}
+                  <Link
+                    to="/terms-of-service"
                     className="text-sm text-foreground/70 hover:text-primary transition-colors"
                   >
                     Terms of Service
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    onClick={(e) => handleLinkClick(e, "/refund-policy")}
+                  <Link
+                    to="/refund-policy"
                     className="text-sm text-foreground/70 hover:text-primary transition-colors"
                   >
                     Refund Policy
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
