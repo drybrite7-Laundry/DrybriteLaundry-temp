@@ -192,7 +192,7 @@ const TermsOfService = () => {
         </div>
       </section>
 
-      <Footer />
+      
     </div>;
 };
 export default TermsOfService;
