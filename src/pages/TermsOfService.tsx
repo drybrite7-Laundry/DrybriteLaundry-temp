@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+
+
 import { FileText, Shirt, Clock, Phone, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 const TermsOfService = () => {
