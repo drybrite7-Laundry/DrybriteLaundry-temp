@@ -1,5 +1,12 @@
 import { motion } from "framer-motion";
-import { ArrowRight, WashingMachine, PackageOpen, Star, Home, Shirt } from "lucide-react";
+import {
+  ArrowRight,
+  WashingMachine,
+  PackageOpen,
+  Star,
+  Home,
+  Shirt,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 // The Button component
@@ -57,6 +64,7 @@ const allServices = [
 const ServicesList = () => {
   return (
     <div className="container px-4 py-12">
+      {/* Section Heading */}
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
           Solutions for Every Fabric
@@ -66,6 +74,7 @@ const ServicesList = () => {
         </p>
       </div>
 
+      {/* Services Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {allServices.map((service, index) => (
           <motion.div
@@ -74,25 +83,26 @@ const ServicesList = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
+            {/* 🔗 Every service links to pricing */}
             <Link to="/pricing">
               <motion.div
                 className="bg-card rounded-lg p-6 h-full glass-hover cursor-pointer group border border-primary/10"
                 whileHover={{ y: -5, scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="text-primary group-hover:scale-110 transition-transform duration-200">
+                <div className="flex items-start justify-between mb-4 min-w-0">
+                  <div className="text-primary group-hover:scale-110 transition-transform duration-200 shrink-0">
                     {service.icon}
                   </div>
-                  <ArrowRight className="w-4 h-4 text-foreground/40 group-hover:text-primary group-hover:translate-x-1 transition-all duration-200" />
+                  <ArrowRight className="w-4 h-4 text-foreground/40 group-hover:text-primary group-hover:translate-x-1 transition-all duration-200 shrink-0" />
                 </div>
 
-                <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-200">
+                <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-200 min-w-0">
                   {service.title}
                 </h3>
 
                 {/* ✅ Fixed subtitle text wrapping */}
-                <p className="text-sm text-foreground/60 mb-4 leading-relaxed whitespace-normal break-words">
+                <p className="text-sm text-foreground/60 mb-4 leading-relaxed whitespace-normal break-words min-w-0">
                   {service.subtitle}
                 </p>
 
@@ -106,6 +116,7 @@ const ServicesList = () => {
         ))}
       </div>
 
+      {/* CTA Button */}
       <motion.div
         className="text-center mt-12"
         initial={{ opacity: 0, y: 20 }}
