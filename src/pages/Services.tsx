@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+
+
 import { FeaturesSection } from "@/components/features/FeaturesSection";
 import ServicesList from "@/components/ServicesList";
 const Services = () => {
