@@ -3,10 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import ServicesCarousel from "@/components/ServicesCarousel";
-
-
 import ImageSlideshow from "@/components/ImageSlideshow";
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { Link } from "react-router-dom";
 
 const headerImages = [
@@ -14,7 +11,6 @@ const headerImages = [
   "/images/header3.png",
   "/images/laundrybyKG.png",
   "/images/Iron.png",
-  
 ];
 
 const Index = () => {
@@ -30,39 +26,31 @@ const Index = () => {
       <Navigation />
 
       {/* Logo Section */}
-      
-     <motion.div
-  initial={{ opacity: 0, scale: 0.9 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.6 }}
-  className="flex justify-center items-center mt-24 mb-8 relative z-10"
->
-  <Link to="/" className="inline-block">
-    <motion.img
-      src="/images/cropped_circle_image.png"
-      alt="Drybrite Laundry Logo"
-      className="w-40 h-40 object-contain cursor-pointer"
-      whileHover={{ scale: 1.1, rotate: 5 }}
-      whileTap={{ scale: 0.95 }}
-      transition={{ type: "spring", stiffness: 300 }}
-    />
-  </Link>
-</motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        className="flex justify-center items-center mt-24 mb-8 relative z-10"
+      >
+        <Link to="/" className="inline-block">
+          <motion.img
+            src="/images/cropped_circle_image.png"
+            alt="Drybrite Laundry Logo"
+            className="w-40 h-40 object-contain cursor-pointer"
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          />
+        </Link>
+      </motion.div>
 
-
-
-     
       {/* Hero Section */}
-      <section
-  className="relative h-[60vh] flex flex-col items-center justify-center text-center px-4 bg-gradient-to-br from-primary/10 to-background"
->
-  <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-center text-foreground">
-    <span className="opacity-90">DryBrite</span>
-    <br />
-    <span className="font-medium">Laundry Services</span>
-  </h1>
-</section>
-
+      <section className="relative h-[60vh] flex flex-col items-center justify-center text-center px-4 bg-gradient-to-br from-primary/10 to-background">
+        <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-center text-foreground">
+          <span className="opacity-90">DryBrite</span>
+          <br />
+          <span className="font-medium">Laundry Services</span>
+        </h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -90,11 +78,9 @@ const Index = () => {
             </Link>
           </Button>
         </motion.div>
-      </motion.section>
+      </section>
 
-
-
-       {/* Image Slideshow Section */}
+      {/* Image Slideshow Section */}
       <section className="py-12">
         <div className="container px-4">
           <motion.div
@@ -108,7 +94,6 @@ const Index = () => {
         </div>
       </section>
 
-      
       {/* Services Carousel */}
       <ServicesCarousel />
 
@@ -203,9 +188,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      
-      <div className="bg-background">
-      </div>
+      <div className="bg-background"></div>
     </div>
   );
 };
