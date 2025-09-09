@@ -22,7 +22,6 @@ const Reviews = () => {
       <TestimonialsSection />
 
       {/* Footer */}
-      <Footer />
     </div>
   );
 };
