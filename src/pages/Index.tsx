@@ -205,6 +205,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
+      
       <div className="bg-background">
         <Footer />
       </div>
