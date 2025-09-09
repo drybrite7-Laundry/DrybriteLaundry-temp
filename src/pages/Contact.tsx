@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { Phone, MapPin, Clock, MessageCircle } from "lucide-react";
 
+{/* Navigation */}
+      <Navigation />
+
 // Placeholder for a single-file application
 const Button = ({ onClick, children, className, size = "lg" }) => {
   const baseClasses = "inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background";
