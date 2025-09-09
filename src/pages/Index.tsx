@@ -51,7 +51,7 @@ const Index = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="relative h-[50vh] flex flex-col items-center justify-center text-center px-4 bg-gradient-to-br from-primary/10 to-background"
+        className="relative h-[60vh] flex flex-col items-center justify-center text-center px-4 bg-gradient-to-br from-primary/10 to-background"
       >
         <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-center text-foreground">
           <span className="opacity-90">
