@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import ServicesCarousel from "@/components/ServicesCarousel";
@@ -14,11 +14,6 @@ const headerImages = [
   "/images/header4.png",
 ];
 
-
-
-<ImageSlideshow images={headerImages} />
-
-
 const Index = () => {
   const handleBookNow = () => {
     window.open(
@@ -30,6 +25,25 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
+
+      {/* Logo Section */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        className="flex justify-center items-center py-10"
+      >
+        <Link to="/" className="inline-block">
+          <motion.img
+            src="/images/cropped_circle_image.png"
+            alt="DryBrite Laundry Logo"
+            className="w-40 h-40 object-contain cursor-pointer"
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          />
+        </Link>
+      </motion.div>
 
       {/* Hero Section */}
       <motion.section
@@ -54,7 +68,8 @@ const Index = () => {
           transition={{ delay: 0.6 }}
           className="text-lg md:text-xl text-foreground/80 mb-8 max-w-2xl mx-auto"
         >
-          Welcome to Drybrite Laundry, your one-stop solution for all your garment and home cleaning needs.{" "}
+          Welcome to Drybrite Laundry, your one-stop solution for all your
+          garment and home cleaning needs.{" "}
           <span className="font-medium">Book your pickup in minutes.</span>
         </motion.p>
 
@@ -74,20 +89,6 @@ const Index = () => {
           </Button>
         </motion.div>
       </motion.section>
-
-      {/* Image Slideshow Section */}
-      <section className="py-12">
-        <div className="container px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-            className="relative h-[60vh] rounded-2xl overflow-hidden"
-          >
-            <ImageSlideshow images={headerImages} />
-          </motion.div>
-        </div>
-      </section>
 
       {/* Services Carousel */}
       <ServicesCarousel />
