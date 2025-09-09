@@ -2,8 +2,6 @@ import { motion } from "framer-motion";
 import { Phone, MapPin, Clock, MessageCircle } from "lucide-react";
 import Navigation from "@/components/Navigation";
 
-{/* Navigation */}
-      <Navigation />
 
 // Placeholder for a single-file application
 const Button = ({ onClick, children, className, size = "lg" }) => {
@@ -27,18 +25,10 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Navigation placeholder */}
+          {/* Navigation */}
+      <Navigation />
       {/* You would import and use the Navigation component here */}
-      <nav className="fixed top-0 left-0 w-full z-50 py-4 backdrop-blur-md bg-background/50">
-        <div className="container px-4 flex justify-between items-center">
-          <a href="/" className="font-bold text-xl text-primary">Drybrite Laundry</a>
-          <div>
-            <a href="/about" className="text-foreground/80 hover:text-primary mx-4">About</a>
-            <a href="/services" className="text-foreground/80 hover:text-primary mx-4">Services</a>
-            <a href="/contact" className="text-foreground/80 hover:text-primary mx-4">Contact</a>
-          </div>
-        </div>
-      </nav>
-      
+           
       {/* Header */}
       <section className="container px-4 pt-32 pb-12 text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
