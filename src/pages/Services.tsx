@@ -25,7 +25,7 @@ const Services = () => {
       </div>
 
       {/* Footer */}
-      <Footer />
-    </div>;
+     
+      </div>;
 };
 export default Services;
