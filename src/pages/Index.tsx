@@ -31,7 +31,7 @@ const Index = () => {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
-        className="flex justify-center items-center py-10"
+        className="flex justify-center items-center py-4"
       >
         <Link to="/" className="inline-block">
           <motion.img
