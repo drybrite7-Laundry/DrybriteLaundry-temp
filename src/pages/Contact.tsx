@@ -144,16 +144,7 @@ const Contact = () => {
       </section>
 
       {/* Footer placeholder */}
-      {/* You would import and use the Footer component here */}
-      <footer className="w-full py-12 mt-20">
-        <div className="container px-4">
-          <div className="glass glass-hover rounded-xl p-8">
-            <p className="text-sm text-foreground/70 text-center">
-              © {new Date().getFullYear()} Drybrite Laundry. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+    
     </div>
   );
 };
