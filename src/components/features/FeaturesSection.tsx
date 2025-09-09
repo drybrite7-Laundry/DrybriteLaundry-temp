@@ -24,29 +24,21 @@ export const FeaturesSection = () => {
       <Tabs defaultValue={features[0].title} className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           {/* Left side - Tab triggers */}
-          <div className="md:col-span-5 space-y-3">
-            <TabsList className="flex flex-col w-full bg-transparent h-auto p-0 space-y-3">
+          <div className="md:col-span-5 space-y-6 px-4 md:px-6">
+            <TabsList className="flex flex-col w-full bg-transparent h-auto p-0 space-y-6">
               {features.map((feature) => (
                 <TabsTrigger
                   key={feature.title}
                   value={feature.title}
                   className="w-full text-left data-[state=active]:shadow-none data-[state=active]:bg-transparent"
                 >
-                  <div className="flex gap-4 items-start">
-                    {/* Icon */}
-                    <div className="text-green-600 text-2xl shrink-0">
-                      {feature.icon}
-                    </div>
-                    {/* Title + Paragraph */}
-                    <div>
-                      <h3 className="text-lg font-semibold mb-1">
-                        {feature.title}
-                      </h3>
-                      <p className="text-gray-600 text-base leading-relaxed">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
+                  {/* Title + Paragraph inside FeatureTab */}
+                  <FeatureTab
+                    title={feature.title}
+                    description={feature.description}
+                    icon={feature.icon}
+                    isActive={false}
+                  />
                 </TabsTrigger>
               ))}
             </TabsList>
