@@ -45,6 +45,20 @@ const Index = () => {
         </Link>
       </motion.div>
 
+      {/* Image Slideshow Section */}
+      <section className="py-12">
+        <div className="container px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="relative h-[60vh] rounded-2xl overflow-hidden shadow-lg"
+          >
+            <ImageSlideshow images={headerImages} />
+          </motion.div>
+        </div>
+      </section>
+
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
@@ -110,7 +124,7 @@ const Index = () => {
               needs.
             </p>
             <Button variant="outline" asChild>
-              <Link to="/services">Learn More</Link>
+              <Link to="/pricing">Learn More</Link>
             </Button>
           </motion.div>
 
