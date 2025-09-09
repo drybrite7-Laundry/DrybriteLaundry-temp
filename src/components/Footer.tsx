@@ -1,14 +1,25 @@
-import { Phone, MessageCircle, MapPin, WashingMachine, PackageOpen, Star, Home, Shirt } from "lucide-react";
+import {
+  Phone,
+  MessageCircle,
+  MapPin,
+  WashingMachine,
+  PackageOpen,
+  Star,
+  Home,
+  Shirt,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 // Reusable Button component
 const Button = ({ onClick, children, className, variant = "solid" }) => {
   const baseClasses =
-    "inline-flex items-center justify-center rounded-full font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 disabled:opacity-50 disabled:pointer-events-none h-10 px-5 text-sm";
-  
+    "inline-flex items-center justify-center rounded-full font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 disabled:opacity-50 disabled:pointer-events-none h-10 px-5 text-sm";
+
   const variantClasses = {
-    solid: "bg-green-600 hover:bg-green-700 text-white shadow-md hover:shadow-lg",
-    outline: "border border-primary/30 bg-background hover:bg-primary/5 text-foreground",
+    solid:
+      "bg-white text-green-700 hover:bg-gray-100 shadow-md hover:shadow-lg",
+    outline:
+      "border border-white text-white hover:bg-white hover:text-green-700",
   }[variant];
 
   return (
@@ -32,16 +43,16 @@ const allServices = [
 
 const Footer = () => {
   return (
-    <footer className="w-full py-6 mt-10">
+    <footer className="w-full bg-gradient-to-r from-green-500 to-green-700 text-white py-10 mt-10">
       <div className="container px-4">
-        <div className="glass glass-hover rounded-xl p-8">
+        <div className="rounded-xl p-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            
             {/* Brand + CTA */}
             <div className="space-y-4">
-              <h3 className="font-medium text-lg text-foreground">Drybrite Laundry</h3>
-              <p className="text-sm text-foreground/70">
-                Premium doorstep laundry and dry cleaning service in IIIT Jhalwa, Prayagraj.
+              <h3 className="font-medium text-lg">Drybrite Laundry</h3>
+              <p className="text-sm opacity-90">
+                Premium doorstep laundry and dry cleaning service in IIIT
+                Jhalwa, Prayagraj.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button
@@ -57,7 +68,6 @@ const Footer = () => {
                 </Button>
                 <Button
                   variant="outline"
-                  className="glass"
                   onClick={() =>
                     window.open(
                       "https://api.whatsapp.com/send/?phone=%2B919236954406&text&type=phone_number&app_absent=0",
@@ -73,13 +83,13 @@ const Footer = () => {
 
             {/* Services */}
             <div className="space-y-4">
-              <h4 className="font-medium text-foreground">Services</h4>
+              <h4 className="font-medium">Services</h4>
               <ul className="space-y-2">
                 {allServices.map((service, index) => (
                   <li key={index}>
                     <Link
                       to="/pricing"
-                      className="text-sm text-foreground/70 hover:text-primary transition-colors"
+                      className="text-sm opacity-90 hover:opacity-100 transition"
                     >
                       {service.title}
                     </Link>
@@ -90,16 +100,18 @@ const Footer = () => {
 
             {/* Contact */}
             <div className="space-y-4">
-              <h4 className="font-medium text-foreground">Contact</h4>
+              <h4 className="font-medium">Contact</h4>
               <ul className="space-y-2">
                 <li className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-primary" />
-                  <span className="text-sm text-foreground/70">IIIT Jhalwa, Prayagraj</span>
+                  <MapPin className="w-4 h-4" />
+                  <span className="text-sm opacity-90">
+                    IIIT Jhalwa, Prayagraj
+                  </span>
                 </li>
                 <li>
                   <a
                     href="https://api.whatsapp.com/send/?phone=%2B919236954406&text&type=phone_number&app_absent=0"
-                    className="text-sm text-foreground/70 hover:text-primary transition-colors"
+                    className="text-sm opacity-90 hover:opacity-100 transition"
                   >
                     WhatsApp Booking
                   </a>
@@ -107,7 +119,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="tel:+919236954406"
-                    className="text-sm text-foreground/70 hover:text-primary transition-colors"
+                    className="text-sm opacity-90 hover:opacity-100 transition"
                   >
                     Call: +91 92369 54406
                   </a>
@@ -117,12 +129,12 @@ const Footer = () => {
 
             {/* Legal */}
             <div className="space-y-4">
-              <h4 className="font-medium text-foreground">Legal</h4>
+              <h4 className="font-medium">Legal</h4>
               <ul className="space-y-2">
                 <li>
                   <Link
                     to="/privacy-policy"
-                    className="text-sm text-foreground/70 hover:text-primary transition-colors"
+                    className="text-sm opacity-90 hover:opacity-100 transition"
                   >
                     Privacy Policy
                   </Link>
@@ -130,7 +142,7 @@ const Footer = () => {
                 <li>
                   <Link
                     to="/terms-of-service"
-                    className="text-sm text-foreground/70 hover:text-primary transition-colors"
+                    className="text-sm opacity-90 hover:opacity-100 transition"
                   >
                     Terms of Service
                   </Link>
@@ -138,7 +150,7 @@ const Footer = () => {
                 <li>
                   <Link
                     to="/refund-policy"
-                    className="text-sm text-foreground/70 hover:text-primary transition-colors"
+                    className="text-sm opacity-90 hover:opacity-100 transition"
                   >
                     Refund Policy
                   </Link>
@@ -148,9 +160,10 @@ const Footer = () => {
           </div>
 
           {/* Copyright */}
-          <div className="mt-4 pt-4 border-t border-primary/20">
-            <p className="text-sm text-foreground/70 text-center">
-              © {new Date().getFullYear()} Drybrite Laundry. All rights reserved.
+          <div className="mt-6 pt-6 border-t border-white/20 text-center">
+            <p className="text-sm opacity-80">
+              © {new Date().getFullYear()} Drybrite Laundry. All rights
+              reserved.
             </p>
           </div>
         </div>
