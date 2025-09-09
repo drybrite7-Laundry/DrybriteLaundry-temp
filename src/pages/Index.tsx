@@ -207,7 +207,6 @@ const Index = () => {
       {/* Footer */}
       
       <div className="bg-background">
-        <Footer />
       </div>
     </div>
   );
