@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 const headerImages = [
   "/images/header2.png",
   "/images/header3.png",
-  "/images/header4.png",
   "/images/laundrybyKG.png",
   "/images/Iron.png",
   
