@@ -148,7 +148,7 @@ const Footer = () => {
           </div>
 
           {/* Copyright */}
-          <div className="mt-8 pt-8 border-t border-primary/20">
+          <div className="mt-4 pt-4 border-t border-primary/20">
             <p className="text-sm text-foreground/70 text-center">
               © {new Date().getFullYear()} Drybrite Laundry. All rights reserved.
             </p>
