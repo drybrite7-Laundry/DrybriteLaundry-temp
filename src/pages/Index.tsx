@@ -3,7 +3,8 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import ServicesCarousel from "@/components/ServicesCarousel";
-import Footer from "@/components/Footer";
+
+
 import ImageSlideshow from "@/components/ImageSlideshow";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { Link } from "react-router-dom";
