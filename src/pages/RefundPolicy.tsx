@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+
+
+
 import { RefreshCw, CheckCircle, AlertCircle, Phone, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
