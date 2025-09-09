@@ -91,7 +91,8 @@ const ServicesList = () => {
                   {service.title}
                 </h3>
 
-                <p className="text-sm text-foreground/60 mb-4 leading-relaxed">
+                {/* ✅ Fixed subtitle text wrapping */}
+                <p className="text-sm text-foreground/60 mb-4 leading-relaxed whitespace-normal break-words">
                   {service.subtitle}
                 </p>
 
