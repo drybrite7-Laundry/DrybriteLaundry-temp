@@ -116,7 +116,7 @@ const About = () => {
       <TestimonialsSection />
 
       {/* Footer */}
-      <Footer />
+      
     </div>
   );
 };
