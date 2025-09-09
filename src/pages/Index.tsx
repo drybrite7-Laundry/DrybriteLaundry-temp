@@ -30,23 +30,24 @@ const Index = () => {
       <Navigation />
 
       {/* Logo Section */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6 }}
-        className="flex justify-center items-center py-12"
-      >
-        <Link to="/" className="inline-block">
-          <motion.img
-            src="/images/cropped_circle_image.png"
-            alt="DryBrite Laundry Logo"
-            className="w-40 h-40 object-contain cursor-pointer"
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          />
-        </Link>
-      </motion.div>
+     <motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.6 }}
+  className="flex justify-center items-center mt-12 mb-8"
+>
+  <Link to="/" className="inline-block">
+    <motion.img
+      src="/images/cropped_circle_image.png"
+      alt="Drybrite Laundry Logo"
+      className="w-40 h-40 object-contain cursor-pointer"
+      whileHover={{ scale: 1.1, rotate: 5 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ type: "spring", stiffness: 300 }}
+    />
+  </Link>
+</motion.div>
+
 
      
       {/* Hero Section */}
