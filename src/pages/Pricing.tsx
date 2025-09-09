@@ -115,6 +115,8 @@ const Pricing = () => {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       <Navigation />
+      <OfferBar />
+
       
       {/* Header */}
       <section className="container px-4 pt-32 pb-12 text-center">
