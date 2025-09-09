@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// The Button component
+// Reusable Button component
 const Button = ({ onClick, children, className, size = "lg" }) => {
   const baseClasses =
     "inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background";
@@ -27,7 +27,7 @@ const Button = ({ onClick, children, className, size = "lg" }) => {
   );
 };
 
-// All services data
+// Services data
 const allServices = [
   {
     id: "washing-services",
@@ -44,19 +44,19 @@ const allServices = [
   {
     id: "ironing-services",
     title: "Ironing / Pressing Services",
-    subtitle: "Perfectly pressed clothes.",
+    subtitle: "Perfectly pressed clothes every time.",
     icon: <Shirt className="w-10 h-10" />,
   },
   {
     id: "household-care",
     title: "Household & Home Care",
-    subtitle: "Expert care for large, bulky items.",
+    subtitle: "Expert care for curtains, bedsheets, and bulky items.",
     icon: <Home className="w-10 h-10" />,
   },
   {
     id: "special-care-services",
     title: "Premium & Special Care",
-    subtitle: "For luxury brands and special garments.",
+    subtitle: "Luxury care for designer and delicate garments.",
     icon: <Star className="w-10 h-10" />,
   },
 ];
@@ -70,7 +70,7 @@ const ServicesList = () => {
           Solutions for Every Fabric
         </h2>
         <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-          Click on any service to learn more about our professional care process
+          Click on any service to learn more about our professional care process.
         </p>
       </div>
 
@@ -83,30 +83,33 @@ const ServicesList = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            {/* 🔗 Every service links to pricing */}
+            {/* 🔗 All services link to pricing */}
             <Link to="/pricing">
               <motion.div
-                className="bg-card rounded-lg p-6 h-full glass-hover cursor-pointer group border border-primary/10"
+                className="bg-card rounded-lg p-6 h-full glass-hover cursor-pointer group border border-primary/10 flex flex-col"
                 whileHover={{ y: -5, scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="flex items-start justify-between mb-4 min-w-0">
+                {/* Icon + Arrow */}
+                <div className="flex items-start justify-between mb-4">
                   <div className="text-primary group-hover:scale-110 transition-transform duration-200 shrink-0">
                     {service.icon}
                   </div>
                   <ArrowRight className="w-4 h-4 text-foreground/40 group-hover:text-primary group-hover:translate-x-1 transition-all duration-200 shrink-0" />
                 </div>
 
-                <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-200 min-w-0">
+                {/* Title */}
+                <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-200">
                   {service.title}
                 </h3>
 
-                {/* ✅ Fixed subtitle text wrapping */}
-                <p className="text-sm text-foreground/60 mb-4 leading-relaxed whitespace-normal break-words min-w-0">
+                {/* Subtitle with wrapping fix */}
+                <p className="text-sm text-foreground/60 mb-4 leading-relaxed break-words">
                   {service.subtitle}
                 </p>
 
-                <span className="flex items-center text-primary text-sm font-medium group-hover:text-secondary transition-colors duration-200">
+                {/* Learn More CTA */}
+                <span className="mt-auto flex items-center text-primary text-sm font-medium group-hover:text-secondary transition-colors duration-200">
                   Learn More
                   <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
                 </span>
