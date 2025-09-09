@@ -128,7 +128,7 @@ const Index = () => {
               needs.
             </p>
             <Button variant="outline" asChild>
-              <Link to="/pricing">Learn More</Link>
+              <Link to="/services">Learn More</Link>
             </Button>
           </motion.div>
 
