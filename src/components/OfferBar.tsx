@@ -7,7 +7,7 @@ const OfferBar = () => {
   animate={{ y: 0, opacity: 1 }}
   exit={{ y: -100, opacity: 0 }}
   transition={{ duration: 0.3 }}
-  className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-primary to-secondary text-white"
+  className="sticky top-0 left-0 right-0 z-[60] bg-gradient-to-r from-primary to-secondary text-white"
 >
   <div className="container mx-auto px-4 py-2 flex items-center justify-between">
     <div className="flex-1 text-center">
@@ -17,6 +17,7 @@ const OfferBar = () => {
     </div>
   </div>
 </motion.div>
+
   );
 };
 
