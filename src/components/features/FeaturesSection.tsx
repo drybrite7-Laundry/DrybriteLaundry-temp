@@ -2,17 +2,22 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FeatureTab } from "./FeatureTab";
 import { FeatureContent } from "./FeatureContent";
 import { features } from "@/config/features";
+
 export const FeaturesSection = () => {
-  return <section className="container px-4 py-24">
+  return (
+    <section className="container px-4 py-24">
       {/* Header Section */}
       <div className="max-w-2xl mb-20">
         <h2 className="text-5xl md:text-6xl font-normal mb-6 tracking-tight text-left">
           Drybrite Laundry
           <br />
-          <span className="text-gradient font-medium">Features &amp; Services</span>
+          <span className="text-gradient font-medium">
+            Features &amp; Services
+          </span>
         </h2>
-        <p className="text-lg md:text-xl text-gray-400 text-left">
-          Experience professional-grade trading tools and features designed for both novice and experienced crypto traders.
+        <p className="text-lg md:text-xl text-gray-500 text-left">
+          Experience professional-grade laundry and dry-cleaning services
+          designed for comfort, convenience, and quality care.
         </p>
       </div>
 
@@ -21,19 +26,46 @@ export const FeaturesSection = () => {
           {/* Left side - Tab triggers */}
           <div className="md:col-span-5 space-y-3">
             <TabsList className="flex flex-col w-full bg-transparent h-auto p-0 space-y-3">
-              {features.map(feature => <TabsTrigger key={feature.title} value={feature.title} className="w-full data-[state=active]:shadow-none data-[state=active]:bg-transparent">
-                  <FeatureTab title={feature.title} description={feature.description} icon={feature.icon} isActive={false} />
-                </TabsTrigger>)}
+              {features.map((feature) => (
+                <TabsTrigger
+                  key={feature.title}
+                  value={feature.title}
+                  className="w-full text-left data-[state=active]:shadow-none data-[state=active]:bg-transparent"
+                >
+                  <div className="flex gap-4 items-start">
+                    {/* Icon */}
+                    <div className="text-green-600 text-2xl shrink-0">
+                      {feature.icon}
+                    </div>
+                    {/* Title + Paragraph */}
+                    <div>
+                      <h3 className="text-lg font-semibold mb-1">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-600 text-base leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                </TabsTrigger>
+              ))}
             </TabsList>
           </div>
 
           {/* Right side - Tab content with images */}
           <div className="md:col-span-7">
-            {features.map(feature => <TabsContent key={feature.title} value={feature.title} className="mt-0 h-full">
+            {features.map((feature) => (
+              <TabsContent
+                key={feature.title}
+                value={feature.title}
+                className="mt-0 h-full"
+              >
                 <FeatureContent image={feature.image} title={feature.title} />
-              </TabsContent>)}
+              </TabsContent>
+            ))}
           </div>
         </div>
       </Tabs>
-    </section>;
+    </section>
+  );
 };
