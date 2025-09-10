@@ -267,34 +267,34 @@ const Pricing = () => {
                   </CardHeader>
                   
                   <CardContent>
-                    <div className="space-y-3 mb-6">
-                      {pricing.items.map((item, itemIndex) => (
-                       
-                
-                <div 
-                         key={itemIndex} 
-                         className="flex items-start justify-between text-sm gap-2"
->
-               <div className="flex items-start gap-2 flex-1">
-                       <Check className="w-4 h-4 text-green-500 mt-1" />
-                      <span className="text-foreground/80 break-words">
-                          {item.item}
-                      </span>
-               </div>
-                      <span className="font-medium text-foreground whitespace-nowrap">
-                       {item.price}
-                      </span>
-               </div>
+  <div className="space-y-3 mb-6">
+    {pricing.items.map((item, itemIndex) => (
+      <div 
+        key={itemIndex} 
+        className="flex items-start justify-between text-sm gap-2"
+      >
+        <div className="flex items-start gap-2 flex-1">
+          <Check className="w-4 h-4 text-green-500 mt-1" />
+          <span className="text-foreground/80 break-words">
+            {item.item}
+          </span>
+        </div>
+        <span className="font-medium text-foreground whitespace-nowrap">
+          {item.price}
+        </span>
+      </div>
+    ))}
+  </div>
 
-                    
-                    <Button 
-                      onClick={handleBookNow}
-                      className="w-full button-gradient"
-                    >
-                      Book {service.title}
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </CardContent>
+  <Button 
+    onClick={handleBookNow}
+    className="w-full button-gradient"
+  >
+    Book {service.title}
+    <ArrowRight className="w-4 h-4 ml-2" />
+  </Button>
+</CardContent>
+
                 </Card>
               </motion.div>
             );
