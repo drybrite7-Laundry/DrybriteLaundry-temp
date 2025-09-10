@@ -64,7 +64,7 @@ const Contact = () => {
                 <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-foreground">Address</h3>
-                  <p className="text-foreground/70">IIIT Jhalwa, Prayagraj, Uttar Pradesh</p>
+                  <p className="text-foreground/70">Front of IIIT Gate No. 5, Pipalgaon, Jhalwa, Prayagraj</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
