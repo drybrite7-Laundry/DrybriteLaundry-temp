@@ -358,9 +358,13 @@ const Pricing = () => {
               Book Service Now
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button variant="outline" size="lg" className="px-8 py-6 text-lg">
-              Call: +91-92369 54406
-            </Button>
+<a href="tel:+919236954406">
+  <Button variant="outline" size="lg" className="px-8 py-6 text-lg">
+    Call: +91-92369 54406
+  </Button>
+</a>
+
+          
           </div>
         </motion.div>
       </section>
