@@ -264,7 +264,6 @@ const Pricing = () => {
                       {service.subtitle}
                     </CardDescription>
                    
-                    <p className="text-sm text-foreground/60">Starting from</p>
                   </CardHeader>
                   
                   <CardContent>
