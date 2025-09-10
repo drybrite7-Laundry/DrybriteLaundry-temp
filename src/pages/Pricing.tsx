@@ -263,9 +263,7 @@ const Pricing = () => {
                     <CardDescription className="text-foreground/70">
                       {service.subtitle}
                     </CardDescription>
-                    <div className="text-3xl font-bold text-primary mt-4">
-                      {pricing.basePrice}
-                    </div>
+                   
                     <p className="text-sm text-foreground/60">Starting from</p>
                   </CardHeader>
                   
