@@ -60,7 +60,6 @@ const services = [
 
 // New pricing data with sample prices
 const pricingData = {
-  const pricingData = {
   "laundry-iron": {
     basePrice: "₹20",
     items: [
