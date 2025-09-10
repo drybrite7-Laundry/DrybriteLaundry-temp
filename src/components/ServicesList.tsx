@@ -28,36 +28,43 @@ const Button = ({ onClick, children, className, size = "lg" }) => {
 };
 
 // Services data
+// Services data (updated with 6 services)
 const allServices = [
   {
-    id: "washing-services",
-    title: "Washing Services",
-    subtitle: "For daily wear, casuals, and semi-formals.",
-    icon: <WashingMachine className="w-10 h-10" />,
+    id: "premium-wedding",
+    title: "Premium clothing Wedding & Special Clothing",
+    subtitle: "Designer wear, wedding suits, lehengas & more.",
+    icon: <Star className="w-10 h-10" />,
   },
   {
-    id: "dry-cleaning-services",
-    title: "Dry Cleaning Services",
-    subtitle: "For delicate and luxury fabrics.",
+    id: "wash-by-weight",
+    title: "Laundry / Wash by Weight (Per Kg)",
+    subtitle: "Affordable wash per kilogram of clothes.",
     icon: <PackageOpen className="w-10 h-10" />,
   },
   {
-    id: "ironing-services",
-    title: "Ironing / Pressing Services",
-    subtitle: "Perfectly pressed clothes every time.",
-    icon: <Shirt className="w-10 h-10" />,
+    id: "dry-cleaning",
+    title: "Dry Cleaning Price List",
+    subtitle: "Expert dry-cleaning for delicate & designer wear.",
+    icon: <WashingMachine className="w-10 h-10" />,
   },
   {
-    id: "household-care",
-    title: "Household & Home Care",
-    subtitle: "Expert care for curtains, bedsheets, and bulky items.",
+    id: "home-essentials",
+    title: "Home Essentials (Laundry/Dryclean Prices)",
+    subtitle: "Care for blankets, curtains, sofa covers & more.",
     icon: <Home className="w-10 h-10" />,
   },
   {
-    id: "special-care-services",
-    title: "Premium & Special Care",
-    subtitle: "Luxury care for designer and delicate garments.",
-    icon: <Star className="w-10 h-10" />,
+    id: "steam-press",
+    title: "Steam Press / Steam Iron Price List",
+    subtitle: "Perfectly pressed clothes with steam finishing.",
+    icon: <Shirt className="w-10 h-10" />,
+  },
+  {
+    id: "laundry-iron",
+    title: "Laundry / Iron List",
+    subtitle: "Fresh wash and iron for daily & traditional wear.",
+    icon: <Shirt className="w-10 h-10" />,
   },
 ];
 
