@@ -44,69 +44,168 @@ const Badge = ({ children, className, variant = "default" }) => {
   );
 };
 
+
+
 // New services data based on the provided text
 const services = [
-  { id: "washing-services", title: "Washing Services", subtitle: "For daily wear, casuals, and semi-formals.", icon: <WashingMachine className="w-10 h-10" /> },
-  { id: "dry-cleaning-services", title: "Dry Cleaning Services", subtitle: "For delicate and luxury fabrics.", icon: <PackageOpen className="w-10 h-10" /> },
-  { id: "ironing-services", title: "Ironing / Pressing Services", subtitle: "Perfectly pressed clothes.", icon: <Shirt className="w-10 h-10" /> },
-  { id: "household-care", title: "Household & Home Care", subtitle: "Expert care for large, bulky items.", icon: <Home className="w-10 h-10" /> },
-  { id: "special-care-services", title: "Premium & Special Care", subtitle: "For luxury brands and special garments.", icon: <Star className="w-10 h-10" /> },
+  { id: "laundry-iron", title: "Laundry / Iron Services", subtitle: "Fresh wash and iron for daily & traditional wear.", icon: <Shirt className="w-10 h-10" /> },
+  { id: "steam-press", title: "Steam Press / Steam Iron", subtitle: "Perfectly pressed clothes with steam finishing.", icon: <Shirt className="w-10 h-10" /> },
+  { id: "home-essentials", title: "Home Essentials", subtitle: "Care for blankets, curtains, sofa covers & more.", icon: <Home className="w-10 h-10" /> },
+  { id: "dry-cleaning", title: "Dry Cleaning", subtitle: "Expert dry-cleaning for delicate & designer wear.", icon: <WashingMachine className="w-10 h-10" /> },
+  { id: "wash-by-weight", title: "Laundry by Weight", subtitle: "Affordable wash per kilogram of clothes.", icon: <PackageOpen className="w-10 h-10" /> },
+  { id: "premium-wedding", title: "Premium & Wedding Care", subtitle: "Designer wear, wedding suits, lehengas & more.", icon: <Star className="w-10 h-10" /> },
 ];
+
+
 
 // New pricing data with sample prices
 const pricingData = {
-  "washing-services": {
-    basePrice: "₹50",
-    items: [
-      { item: "Shirts & Trousers", price: "₹50" },
-      { item: "Jeans", price: "₹60" },
-      { item: "Winter Wear", price: "₹100" },
-      { item: "Bed sheets", price: "₹80" },
-      { item: "Blankets (light)", price: "₹250" },
-    ]
-  },
-  "dry-cleaning-services": {
-    basePrice: "₹200",
-    items: [
-      { item: "Suits & Blazers", price: "₹250" },
-      { item: "Formal Shirts", price: "₹150" },
-      { item: "Sarees (silk/designer)", price: "₹350" },
-      { item: "Heavy Curtains", price: "₹500" },
-      { item: "Leather Jackets", price: "₹600" },
-    ]
-  },
-  "ironing-services": {
+  const pricingData = {
+  "laundry-iron": {
     basePrice: "₹20",
     items: [
-      { item: "Shirts & Trousers", price: "₹20" },
-      { item: "Sarees", price: "₹40" },
-      { item: "Suits & Blazers", price: "₹100" },
-      { item: "School Uniforms", price: "₹30" },
-      { item: "Household Linen", price: "₹50" },
+      { item: "Shirt", price: "₹20" },
+      { item: "Shirt & Dhoti (Silk)", price: "₹30" },
+      { item: "Kurta (Cotton)", price: "₹39" },
+      { item: "Kurta (Silk)", price: "₹59" },
+      { item: "Kurta Heavy", price: "₹99" },
+      { item: "Kurta Pyjama (Heavy)", price: "₹109" },
+      { item: "Kurta Pyjama (Light)", price: "₹59" },
+      { item: "Safari Shirt & Pant", price: "₹79" },
+      { item: "Jeans", price: "₹25" },
+      { item: "Trousers", price: "₹39" },
+      { item: "Formal & Casual Pants", price: "₹39" },
+      { item: "Combo Shirt + Pant", price: "₹49" },
+      { item: "Blazer / Coat", price: "₹129" },
+      { item: "Jacket Normal Short", price: "₹99" },
+      { item: "Jacket Puffer", price: "₹129" },
+      { item: "Suit 2 Pc", price: "₹159" },
+      { item: "Suit 3 Pc", price: "₹179" },
+      { item: "Sweater / Cardigan (Full Sleeve)", price: "₹79" },
+      { item: "Sweater / Cardigan (Sleeveless)", price: "₹69" },
+      { item: "Sherwani", price: "₹159" },
+      { item: "Saree", price: "₹50" },
+      { item: "Saree Silk", price: "₹149" },
+      { item: "Wedding Sherwani Set", price: "₹199" },
+      { item: "Wedding Sherwani Set Designer", price: "₹249" },
+      { item: "Wedding Suit (3 pcs)", price: "₹249" },
+      { item: "Lahanga", price: "₹249" },
+      { item: "Wedding Suit Designer (3 pcs)", price: "₹299" },
+      { item: "Wedding Tuxedo (3 pcs)", price: "₹249" },
+      { item: "Wedding Garara Designer (3 pcs)", price: "₹299" },
     ]
   },
-  "household-care": {
-    basePrice: "₹200",
-    items: [
-      { item: "Curtains", price: "₹200" },
-      { item: "Sofa & Cushion Covers", price: "₹150" },
-      { item: "Bed Linen", price: "₹120" },
-      { item: "Blankets", price: "₹300" },
-      { item: "Carpets", price: "₹400" },
-    ]
-  },
-  "special-care-services": {
-    basePrice: "₹500",
-    items: [
-      { item: "Stain Removal", price: "₹200" },
-      { item: "Delicate Fabrics", price: "₹300" },
-      { item: "Luxury Brands", price: "₹500" },
-      { item: "Perfumed Wash", price: "₹100" },
-      { item: "Wedding Wear", price: "₹1000" },
-    ]
-  }
-};
 
+
+  "steam-press": {
+    basePrice: "₹10",
+    items: [
+      { item: "Shirt", price: "₹10" },
+      { item: "Shirt & Dhoti (Silk)", price: "₹20" },
+      { item: "Kurta (Cotton)", price: "₹15" },
+      { item: "Kurta (Silk)", price: "₹25" },
+      { item: "Kurta Heavy", price: "₹45" },
+      { item: "Kurta Pyjama (Heavy)", price: "₹50" },
+      { item: "Kurta Pyjama (Light)", price: "₹25" },
+      { item: "Safari Shirt & Pant", price: "₹35" },
+      { item: "Jeans", price: "₹12" },
+      { item: "Trousers", price: "₹15" },
+      { item: "Formal & Casual Pants", price: "₹15" },
+      { item: "Pyjama", price: "₹12" },
+      { item: "Combo Shirt + Pant", price: "₹25" },
+      { item: "Blazer / Coat", price: "₹60" },
+      { item: "Jacket Normal", price: "₹50" },
+      { item: "Suit 2 Pc", price: "₹79" },
+      { item: "Suit 3 Pc", price: "₹89" },
+      { item: "Sweater / Cardigan (Full Sleeve)", price: "₹35" },
+      { item: "Sweater / Cardigan (Sleeveless)", price: "₹30" },
+      { item: "Sweatshirt / Jumper", price: "₹35" },
+    ]
+  },
+
+
+  "dry-cleaning": {
+    basePrice: "₹39",
+    items: [
+      { item: "Shirt & Dhoti (Silk)", price: "₹39" },
+      { item: "Kurta (Silk)", price: "₹59" },
+      { item: "Kurta Heavy", price: "₹99" },
+      { item: "Kurta Pyjama (Heavy)", price: "₹109" },
+      { item: "Safari Shirt & Pant", price: "₹79" },
+      { item: "Blazer / Coat", price: "₹129" },
+      { item: "Jacket Normal", price: "₹99" },
+      { item: "Sherwani", price: "₹159" },
+      { item: "Wedding Sherwani Set", price: "₹199" },
+      { item: "Wedding Sherwani Set Designer", price: "₹249" },
+      { item: "Wedding Suit (3 pcs)", price: "₹249" },
+      { item: "Wedding Suit Designer (3 pcs)", price: "₹299" },
+      { item: "Wedding Tuxedo (3 pcs)", price: "₹249" },
+      { item: "Wedding Tuxedo Designer (3 pcs)", price: "₹299" },
+      { item: "Gown / Lehenga (Designer / Special Occasion)", price: "₹149 – ₹299" },
+    ]
+  },
+
+    
+
+  "wash-by-weight": {
+    basePrice: "₹80 / kg",
+    items: [
+      { item: "Cotton / Daily Wear (Shirts, T-Shirts, Pants)", price: "₹80 / kg" },
+      { item: "Jeans / Heavy Bottoms", price: "₹100 / kg" },
+      { item: "Woolen / Sweaters / Cardigans", price: "₹120 / kg" },
+      { item: "Delicate Fabrics (Silk, Satin, Velvet)", price: "₹140 / kg" },
+      { item: "Bedsheets / Pillow Covers / Curtains", price: "₹80 / kg" },
+      { item: "Blankets / Quilts / Comforters", price: "₹150 / kg" },
+      { item: "Sofa Covers / Mattress Covers", price: "₹120 / kg" },
+      { item: "Table Cloths / Towels", price: "₹80 / kg" },
+      { item: "Carpets / Rugs", price: "₹200 / kg" },
+    ]
+  },
+
+  
+  
+  "premium-wedding": {
+    basePrice: "₹159",
+    items: [
+      { item: "Sherwani", price: "₹159" },
+      { item: "Wedding Sherwani Set", price: "₹199" },
+      { item: "Wedding Sherwani Set Designer", price: "₹249" },
+      { item: "Coat Pant", price: "₹159" },
+      { item: "Saree Silk", price: "₹149" },
+      { item: "Wedding Suit (3 pcs)", price: "₹249" },
+      { item: "Wedding Suit Designer (3 pcs)", price: "₹299" },
+      { item: "Wedding Lahanga", price: "₹249" },
+      { item: "Wedding Garara Designer (3 pcs)", price: "₹299" },
+      { item: "Gown / Lehenga (Designer / Special Occasion)", price: "₹199 – ₹299" },
+      { item: "Formal Suit 2 Pc", price: "₹159" },
+      { item: "Formal Suit 3 Pc", price: "₹179" },
+    ]
+  },
+
+ "home-essentials": {
+    basePrice: "₹29",
+    items: [
+      { item: "Blanket – Single Size", price: "₹99" },
+      { item: "Blanket – Double Size", price: "₹199" },
+      { item: "Blanket – King Size", price: "₹249" },
+      { item: "Curtain (per piece)", price: "₹29" },
+      { item: "Sofa Cover Set", price: "₹149" },
+      { item: "Pillow Cover", price: "₹15" },
+      { item: "Bedsheet – Single", price: "₹29" },
+      { item: "Bedsheet – Double", price: "₹39" },
+      { item: "Bedsheet – King", price: "₹69" },
+      { item: "Carpet – Small (per piece)", price: "₹199" },
+      { item: "Carpet – Large (per piece)", price: "₹399" },
+      { item: "Shoes (Leather / Suede / Nubuck)", price: "₹149" },
+      { item: "Shoes (Sports / Sneakers)", price: "₹149" },
+      { item: "Boots (Leather)", price: "₹99" },
+      { item: "Formal Shoes (Polish & Clean)", price: "₹99" },
+      { item: "School Shoes (per pair)", price: "₹30" },
+      { item: "Kids Shoes (per pair)", price: "₹59" },
+      { item: "Heels (Regular)", price: "₹89" },
+    ]
+  }    
+};
 const Pricing = () => {
   const handleBookNow = () => {
     window.open(
