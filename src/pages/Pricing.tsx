@@ -269,15 +269,23 @@ const Pricing = () => {
                   <CardContent>
                     <div className="space-y-3 mb-6">
                       {pricing.items.map((item, itemIndex) => (
-                        <div key={itemIndex} className="flex items-center justify-between text-sm">
-                          <div className="flex items-center gap-2">
-                            <Check className="w-4 h-4 text-green-500" />
-                            <span className="text-foreground/80">{item.item}</span>
-                          </div>
-                          <span className="font-medium text-foreground">{item.price}</span>
-                        </div>
-                      ))}
-                    </div>
+                       
+                
+                <div 
+                         key={itemIndex} 
+                         className="flex items-start justify-between text-sm gap-2"
+>
+               <div className="flex items-start gap-2 flex-1">
+                       <Check className="w-4 h-4 text-green-500 mt-1" />
+                      <span className="text-foreground/80 break-words">
+                          {item.item}
+                      </span>
+               </div>
+                      <span className="font-medium text-foreground whitespace-nowrap">
+                       {item.price}
+                      </span>
+               </div>
+
                     
                     <Button 
                       onClick={handleBookNow}
