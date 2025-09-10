@@ -105,7 +105,7 @@ const Footer = () => {
                 <li className="flex items-center gap-2">
                   <MapPin className="w-4 h-4" />
                   <span className="text-sm opacity-90">
-                    IIIT Jhalwa, Prayagraj
+                   Front of IIIT Gate No. 5, Pipalgaon, Jhalwa, Prayagraj
                   </span>
                 </li>
                 <li>
